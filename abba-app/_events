@@ -1,0 +1,11 @@
+{
+    "title": "Strong builders part 1",
+    "description": "Build from Basic",
+    "venue": "LT 4",
+    "date": "2020-10-10",
+    "thumbnail": "thumbnail-1",
+    "galleries": [
+        "gallery-1",
+        "gallery-2"
+    ]
+}

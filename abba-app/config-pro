@@ -1,0 +1,23 @@
+{
+  "APP_NAME": "api",
+  "mongodb": {
+    "_CON_PRO": "mongodb://rare:4bbaL0v3@localhost:2717/abbalove"
+  },
+  "X_API_KEY": "81b8df3e8aaa597f7b77d565ad713b3d",
+  "jwt_sign_options": {
+    "expiresIn": "24h",
+    "algorithm": "RS256"
+  },
+  "jwt_verify_options": {
+    "expiresIn": "24h",
+    "algorithm": ["RS256"]
+  },
+  "onesignal": {
+    "url": "https://onesignal.com:443/api/v1/notifications",
+    "appId": "b3835da7-ac5b-4109-8727-65419b7d38eb",
+    "apiKey": "NjExOTNlNDUtMDI2Zi00NDI3LWE1MDMtYTc3NGM0YjgxMTc0"
+  },
+  "_FILE_DIRECTORY": "/home/polly/api_attachments",
+  "_PATH_TO_DOWNLOAD": "https://app.abbalovebarat.org/api/v1/files",
+  "_LOGGING": true
+}

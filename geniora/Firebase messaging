@@ -1,0 +1,19 @@
+Firebase messaging
+
+TOKEN	:
+ft--LVwIaMI:APA91bHHaz7etZfGmufmyK_D3kAvmfTQDuocx31oHGjOX7i8E70eZPffIMbD-2ekdjQ1D2qbkRmbFAu70RQbEvEKpAQGLmFwRs6zJe14XNxW-1TCMixx_cdzXb4YOtHuMVgcQvBWWXuy
+
+TITLE	:
+Yuk kita lihat, pipo dan lula lagi ngapain nih!
+
+Message	:
+{
+    "message": "Wah, kelihatan serunya ya..",
+    "url": "https://www.instagram.com/p/B9BLTmnpUpX/?utm_source=ig_web_button_share_sheet"
+}
+
+Channel	:
+1. geniora_channel_broadcast
+2. geniora_channel_inbox
+3. geniora_channel_ig
+

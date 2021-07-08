@@ -1,0 +1,184 @@
+
+
+
+[Bucket List]
+
+- Image base64, ga bisa atur size
+- login geniora.app@gmail.com ngga bisa update step
+- login geniora.app@gmail.com kalo login pake google, content nya ke lock
+
+JsonObjectRequest
+- cache
+- Encryptfile PDF
+
+
+Sprint List 30 March 2020
+- Tulisan expired access diganti kalau user sudah diaktifasi "Selamat akun kamu sudah aktif, silahkan login kembali ya.."
+- Push notification jika ada update apps baru
+- Tombol refresh di halaman detail pembelian, untuk cek sudah di konfirmasi atau belum
+- Push notification untuk user yang sudah lama tidak aktif membuka applikasi ( >= sehari )
+- Volley pas payment, kalo server lagi proses restart muncul error
+
+------------------------------------------------------
+Update 1.0.9
+
+- Forgot Password
+- Bank soal / quiz pas mau di coba lagi crash
+- Username untuk testing
+- Login dengan google account
+- Tambahin mata dilogin
+- Ubah design Course / BAB
+- Ubah tampilan input tanggal lahir
+- Validasi format username pada waktu registrasi
+- Login dengan username / email
+
+admin account
+geniora.app@gmail.com
+Genio1212.,
+
+------------------------------------------------------
+
+Update 1.0.5
+- Close menu notifikasi, language, langganan
+- Button Login -> "Masuk"
+- Search problem ga jalan
+- Layar mati waktu nonton video terlalau lama
+- Bugs change password
+- IPA kalo diklik 2 kali, list nya hilang
+- A, B, C, D quiz / bank soal sama bank soal kalo kepanjangan jadi turun (ga pas di tengah)
+- Tampilin beta version
+- Bug change password
+- (eye) dichange password
+- Perbaikan resolusi gambar untuk list materi bab
+- Perubahan posisi layout Login, Register, Ubah password, Update profile
+
+------------------------------------------------------
+
+[Polly]. Login:  
+- Concurent login
+- Login forever
+
+Espay Documentation
+Search bisa kelihatan
+
+logout tambahin parameter access
+
+Update version notification
+final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+try {
+    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+} catch (android.content.ActivityNotFoundException anfe) {
+    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+}
+
+Forget password
+
+Email Verication (Perlu tampilan email yang akan dikirim ke user)
+Username validation [Done]
+Tutorial (?)
+Animasi Success kalo berhasil register dll
+
+------------------------------------------------------
+
+From Polly 
+2019-11-23
+
+1. Tambahin kode akses waktu request ke link file NGINX
+2. Forget Password
+3. Free 3 bulan untuk yang register <= 31 Desember 2019 [Done]
+4. Concurent login issue
+5. Dokumentasi Geniora
+6. Aktif hingga, tampil di Student ID, dibawah sekolah gantiin email (Data nya didapat pas login) [Done]
+7. Tampilan product subscription
+8. Tanggal ulang tahun onchange nya tidak sesuai [Done]
+9. Image untuk "Lupa password"
+10. Test update APK di Google Play Console [Done]
+
+------------------------------------------------------
+
+From Polly 
+2019-11-07
+
+1. Tambahin kode akses waktu request ke link file NGINX
+2. Update Student Card Image [Done]
+3. Forget Password
+4. Free 3 bulan untuk yang register <= 31 Desember 2019
+5. Concurent login issue
+6. Halaman profile Ubah "Ubah Profile" -> "Ubah Profil" [Done]
+7. Dokumentasi Geniora
+8. Profile picture di Student Card Image (TAB) Ga pas posisinya [Done]
+9. Tampilin version code dihalaman pengaturan [Done]
+10. Tampilan informasi langganan
+11. Tampilan product subscription
+12. Tanggal ulang tahun di register dan profile update [Done}
+13. Image untuk "Lupa password"
+
+------------------------------------------------------
+
+From Polly 
+2019-11-07
+
+1. Tambahin kode akses waktu request ke link file NGINX
+2. Kelas option nya jadi kelas 1 - 4 saja [Done]
+3. Update apps name jadi Geniora Kelas 4 - 6 SD [Done]
+4. Update Student Card Image
+5. Forget Password
+6. Free 3 bulan untuk yang register <= 31 Desember 2019
+7. Update Google Play Console Geniora 456 [Done]
+
+------------------------------------------------------
+
+From Polly
+ 1. Video tombol maximize / minimize nya susah diklik karna kekecilan, tolong gedein area kliknya [Done]
+ 2. Video kalo di maximize, lalu minimize, lalu back ke halaman step-step pas dibuka lagi video nya ngga mulai dari awal [Done]
+ 3. Book muter2 doank [Done]
+ 4. "Sign up with email" dihalaman Login, diganti jadi Register [Done]
+ 5. File manager tampilin dengan format "Kelas 4 - IPA - Judul Course - Judul Video" [Done]
+ 6. Call api logout disemua function logout [Done]
+ 7. Ubah semua font jadi : Barlou [Done]
+ 8. Shadow di header Halaman utama dihilangin [Done]
+ 9. Step-step kalau discroll ke bawah header nya hilang [Done]
+10. tambahin kode akses waktu request ke link file NGINX
+
+------------------------------------------------------
+
+From : Ko Ferry
+2019-10-14
+
+Another option to distribute voucher
+ex : Toped
+
+Login, kelasnya sesuai dengan data register bukan default kelas 1 [Done]
+
+Prevent concurent login [Done]
+1. Login -> get [access]
+2. Insert T_Login
+	username,
+	islogout (def: 0)
+	login_date [def: now()],
+	
+------------------------------------------------------
+
+From : Jhony
+2019-10-14	
+
+Api note error, "production.null" [Done]
+
+
+------------------------------------------------------
+
+Voucher redeem api [Done]
+
+Ratio video 1280 x 720, sesuaikan untuk ukuran potrait [Done]
+
+Book belom ke cache setelah sudah muncul didownload [Done]
+
+Email verification
+
+Prevent simultanous login [Done]
+
+NGINX authorization
+
+Sub bab
+
+SSL Certificate

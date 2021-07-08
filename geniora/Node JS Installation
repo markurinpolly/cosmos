@@ -1,0 +1,43 @@
+Node JS (Centos)
+
+https://www.e2enetworks.com/help/knowledge-base/how-to-install-node-js-and-npm-on-centos/
+
+yum install -y gcc-c++ make
+
+curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+
+yum install nodejs
+
+check :
+node -v 
+npm -v 
+
+Folder :
+/usr/share/node
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+update node js
+https://tecadmin.net/upgrade-nodejs-via-npm/
+
+sudo npm cache clean -f 
+
+sudo npm install -g n 
+
+sudo n stable
+
+sudo ln -sf /usr/local/n/versions/node/11.8.0/bin/node /usr/bin/node
+
+node -v 
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+install express generator global
+
+npm install express-generator -g
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+install pm2 
+
+npm install pm2 -g

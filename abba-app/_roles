@@ -1,0 +1,19 @@
+{
+    name: "pemerhati",
+    access: [
+		{
+			module: "sermons",
+			can_create: 0,
+			can_read: 1,
+			can_ update: 0,
+			can_delete: 0
+		},
+		{
+			module: "devotions",
+			can_create: 0,
+			can_read: 1,
+			can_ update: 0,
+			can_delete: 0
+		}
+    ]
+}

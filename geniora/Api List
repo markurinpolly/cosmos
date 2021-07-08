@@ -1,0 +1,101 @@
+Api List
+
+IP
+http://58.65.241.124
+
+6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+
+Login
+http://58.65.241.124:8080/Administrator/Api/Login?user=admin&pass=21232f297a57a5a743894a0e4a801fc3
+
+Feeds
+http://58.65.241.124:8080/Administrator/Api/Feeds?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+
+Book
+Browse
+http://58.65.241.124:8080/Administrator/Api/Book/Browse?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Detail :
+http://58.65.241.124:8080/Administrator/Api/Book/Detail?id=44&access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+
+
+Article
+Browse
+http://58.65.241.124:8080/Administrator/Api/Article/Browse?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Detail :
+http://58.65.241.124:8080/Administrator/Api/Article/Detail?id=44&access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+
+ 
+Video(Youtube)
+Browse
+http://58.65.241.124:8080/Administrator/Api/Video/Browse?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Detail :
+http://58.65.241.124:8080/Administrator/Api/Video/Detail?id=83&access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+
+Video
+Browse
+http://58.65.241.124:8080/Administrator/Api/Video2/Browse?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Detail :
+http://58.65.241.124:8080/Administrator/Api/Video2/Detail?id=83&access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+
+Quiz
+Browse
+http://58.65.241.124:8080/Administrator/Api/Quiz/Browse?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Detail :
+http://58.65.241.124:8080/Administrator/Api/Quiz/Detail?id=83&access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+
+Audio
+Browse
+http://58.65.241.124:8080/Administrator/Api/Audio/Browse?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Detail :
+http://58.65.241.124:8080/Administrator/Api/Audio/Detail?id=83&access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+AudioBook
+Browse
+http://58.65.241.124:8080/Administrator/Api/AudioBook/Browse?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Detail :
+http://58.65.241.124:8080/Administrator/Api/AudioBook/Detail?id=83&access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+
+Bank Soal
+Browse
+http://58.65.241.124:8080/Administrator/Api/BankQuiz/Browse?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Detail
+http://58.65.241.124:8080/Administrator/Api/BankQuiz/Detail?id=3&access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+
+Course
+Browse
+http://58.65.241.124:8080/Administrator/Api/Course/Browse?access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Detail :
+http://58.65.241.124:8080/Administrator/Api/Course/Detail?id=83&access=6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Register
+http://58.65.241.124/geniora-api/register
+
+File (All Attachment)
+code   : d_attachment
+access : from login
+http://58.65.241.124/geniora-api/file/:code/:access
+
+Ex:
+http://58.65.241.124/geniora-api/file/ee3b2ff9-f56d-40fb-8b6a-afb0197bd271/6a38a8d1-5b46-46f8-9fd0-71c6cb249ad4
+
+Test link (Video, no-access)
+http://58.65.241.124/geniora-api/file/example
+

@@ -1,0 +1,35 @@
+SSL for HA Proxy Setting
+
+Intermediate Certificate
+cat certificate.crt intermediates.pem private.key > ssl-certs.pem
+
+certificate.crt		: dari yang diemail provider CA
+intermediates.pem	: rename ca-bundle jadi .pem File
+private.key			: digenerate pake open-ssl lalu dikirim ke provide CA
+
+file .crt
+handle by pak Chandra
+
+--------------------------------------------------------------------------
+SSL for NGINX Setting
+
+Intermediate Certificate
+cat web_geniora_com.crt web_geniora_com.ca-bundle.crt > web_geniora_com_chained.crt
+
+web_geniora_com.crt				: dari yang diemail provider CA
+web_geniora_com.ca-bundle.crt	: rename ca-bundle jadi .crt File
+private.key						: digenerate pake open-ssl lalu dikirim ke provide CA
+
+file .crt
+handle by pak Chandra
+
+cat
+1. certificate.crt
+2. Intermediate Certificate :: intermediates.pem
+3. private.key
+> ssl-certs.pem
+
+PATH
+/usr/share/ssl/web.geniora.com/2021/ssl-certs.pem
+
+/usr/share/ssl/web.geniora.com/2021/SectigoRSADomainValidationSecureServerCA.crt

@@ -1,0 +1,10 @@
+haproxy-ssl-termination
+
+doc		: https://www.haproxy.com/blog/haproxy-ssl-termination/
+loc 	: /etc/ssl/certs/mysite.pem
+check	: https://www.ssllabs.com/ssltest
+
+frontend www.mysite.com
+    bind 10.0.0.3:80
+    bind 10.0.0.3:443 ssl crt /etc/ssl/certs/mysite.pem
+    default_backend web_servers

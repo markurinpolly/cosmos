@@ -1,0 +1,121 @@
+#---------------------------------------------------------------------
+# Example configuration for a possible web application.  See the
+# full configuration options online.
+#
+#   http://haproxy.1wt.eu/download/1.4/doc/configuration.txt
+#
+#---------------------------------------------------------------------
+
+#---------------------------------------------------------------------
+# Global settings
+#---------------------------------------------------------------------
+global
+    # to have these messages end up in /var/log/haproxy.log you will
+    # need to:
+    #
+    # 1) configure syslog to accept network log events.  This is done
+    #    by adding the '-r' option to the SYSLOGD_OPTIONS in
+    #    /etc/sysconfig/syslog
+    #
+    # 2) configure local2 events to go to the /var/log/haproxy.log
+    #   file. A line like the following can be added to
+    #   /etc/sysconfig/syslog
+    #
+    #    local2.*                       /var/log/haproxy.log
+    #
+    log         127.0.0.1 local2
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     4000
+    user        haproxy
+    group       haproxy
+	tune.ssl.default-dh-param 2048
+    daemon
+
+    # turn on stats unix socket
+    stats socket /var/lib/haproxy/stats
+
+#---------------------------------------------------------------------
+# common defaults that all the 'listen' and 'backend' sections will
+# use if not designated in their block
+#---------------------------------------------------------------------
+defaults
+    mode                    http
+    log                     global
+    option                  httplog
+    option                  dontlognull
+    option http-server-close
+    option forwardfor       except 127.0.0.0/8
+    option                  redispatch
+    retries                 3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client          1m
+    timeout server          1m
+    timeout http-keep-alive 10s
+    timeout check           10s
+    maxconn                 3000
+	stats enable
+        stats hide-version
+        stats refresh 30s
+        stats show-node
+        stats auth GenioraHA:p@ssGenioraHA
+        stats uri  /haproxy?stats
+
+#---------------------------------------------------------------------
+# main frontend which proxys to the backends
+#---------------------------------------------------------------------
+frontend  58.65.241.124
+	bind *:80
+    bind *:443 ssl crt /usr/share/ssl/web.geniora.com/web.geniora.com.intermediate.pem
+	#http-request redirect scheme https unless { ssl_fc }
+	
+    acl url_static       path_beg       -i /static /images /javascript /stylesheets
+    acl url_static       path_end       -i .jpg .gif .png .css .js
+	
+	acl url_index      	 path       	-i /
+	acl url_payment      path_beg       -i /geniora-payment/
+	acl url_api      	 path_beg       -i /geniora-api/
+
+	use_backend geniora_index   if url_index
+    use_backend static          if url_static
+	use_backend payment_backend if url_payment
+	use_backend app 			if url_api
+
+#---------------------------------------------------------------------
+# round robin balancing between the payment backends
+#---------------------------------------------------------------------
+backend geniora_index
+    balance     roundrobin
+    server  geniora-api-1 58.65.241.124:8081 check
+	server  geniora-api-2 58.65.241.124:8082 check
+	server  geniora-api-3 58.65.241.124:8083 check
+	server  geniora-api-4 58.65.241.124:8084 check
+	server  geniora-api-5 58.65.241.124:8085 check
+
+#---------------------------------------------------------------------
+# static backend for serving up images, stylesheets and such
+#---------------------------------------------------------------------
+backend static
+    balance     roundrobin
+    server      static 127.0.0.1:4331 check
+
+#---------------------------------------------------------------------
+# round robin balancing between the payment backends
+#---------------------------------------------------------------------
+backend payment_backend
+    balance     roundrobin
+    server  geniora-payment-70 58.65.241.124:8070 check
+	server  geniora-payment-90 58.65.241.124:8090 check
+
+#---------------------------------------------------------------------
+# round robin balancing between the various backends
+#---------------------------------------------------------------------
+backend app
+    balance     roundrobin
+    server  geniora-api-1 58.65.241.124:8081 check
+	server  geniora-api-2 58.65.241.124:8082 check
+	server  geniora-api-3 58.65.241.124:8083 check
+	server  geniora-api-4 58.65.241.124:8084 check
+	server  geniora-api-5 58.65.241.124:8085 check

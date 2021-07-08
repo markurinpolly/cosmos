@@ -1,0 +1,49 @@
+ESPAY Documentation
+
+Signature Key (Key) : Key yang akan digunakan untuk generate signature (diberikan oleh team Espay).
+rq_uuid 			: Request uuid yang dikirim dalam web service.
+rq_datetime 		: Request datetime yang dikirim dalam web service[Format : 2016-07-25 11:05:49].
+order_id 			: Merchant order id.
+amount 				: Transaction amount.
+ccy 				: Nilai mata uang.
+comm_code 			: Comm Code. [SGWGENIORA]
+
+API Key: f412e00ab6cf44270a70856776165f56
+Password: SYNSGFSZ
+Signature / KEY: o2u0f8lo49ugntsn
+
+URL: https://sandbox-portal.espay.id/
+Cust ID: 628999945868
+User ID: 62341400090302
+Password: geniora123
+
+## Signature
+
+1. Send Invoice
+##KEY##rq_uuid##rq_datetime##order_id##amount##ccy##comm_code##SENDINVOICE##
+
+2. Closed Invoice 
+##KEY##rq_uuid##rq_datetime##order_id##comm_code##CLOSEDINVOICE##
+
+
+3. 	Transaction Inquiry [mode: INQUIRY], 
+	Payment notification [mode: PAYMENTREPORT], 
+	Check Payment Status [mode: CHECKSTATUS], 
+	Update Expire Transaction [mode: EXPIRETRANSACTION]
+	
+##KEY##rq_datetime##order_id##mode##
+
+## Generate Signature
+
+First Step : Satukan paramater dengan ##
+ex:
+##7bc074f97c3131d2e290a4707a54a623##2016-07-25 11:05:49##145000065##INQUIRY##
+
+Second Step : Uppercase string yang telah disatukan
+ex :
+##7BC074F97C3131D2E290A4707A54A623##2016-07-25 11:05:49##145000065##INQUIRY##
+
+Third Step : Hash dengan sha256
+Ex:
+67747e2e6b219879563655eb012f77646b9792736f5693f2e44693fec5a67d26
+

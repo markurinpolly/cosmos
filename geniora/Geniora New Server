@@ -1,0 +1,371 @@
+GenDB-122 (Centos 7.6.1810)
+vps1
+ssh root@58.65.241.122
+58.65.241.122
+Model Name : Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
+HD : 500GB
+CPU : 4 (1 x 4 x 1)
+RAM : 16GB
+user : root
+password : p@ssGeniora:D1kali
+Thread(s) per core : 1
+Core(s) per socket : 4
+Socket(s) : 1
+
+GenHA-123 (Centos 7.6.1810)
+vps2
+58.65.241.123
+Model Name : Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
+HD : 500GB
+CPU : 2 (1 x 2 X 1)
+RAM : 16GB
+user : root
+password : p@ssGeniora:D2kali
+Thread(s) per core : 1
+Core(s) per socket : 2
+Socket(s) : 1
+
+GenApp-124 (Centos 7.6.1810)
+vps3
+58.65.241.124
+ssh root@58.65.241.124  
+Model Name : Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
+HD : 500GB
+CPU : 1 (1 x 1 x 1)
+RAM : 16GB
+user : root
+password : p@ssGeniora:D3kali
+Thread(s) per core : 1
+Core(s) per socket : 1
+Socket(s) : 1
+
+root
+p@ssGeniora:D3kali
+
+lscpu
+df -h
+free -m
+
+cat /etc/centos-release
+
+
+
+Folder Installer
+/opt/installer/
+
+Pre Instalation
+Intall netstat
+yum provides */netstat
+
+yum install net-tools
+
+SSH
+ssh root@58.65.241.124
+
+1. Install Java 8
+source :
+https://www.liquidweb.com/kb/install-java-8-on-centos-7/
+
+yum -y update
+
+yum install java-1.8.0-openjdk
+
+java -version
+
+2. Install wget
+
+sudo yum install wget
+
+3. Install tomcat 8.5
+
+mkdir /opt/installer
+cd /opt/installer
+
+wget https://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.41/bin/apache-tomcat-8.5.41.tar.gz
+wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.57/bin/apache-tomcat-8.5.57.tar.gz
+
+mkdir /usr/share/tomcat8.5
+
+tar xvf /opt/installer/apache-tomcat-8.5.41.tar.gz -C /usr/share/tomcat8.5 --strip-components=1
+tar xvf /opt/installer/apache-tomcat-8.5.57.tar.gz -C /usr/share/tomcat8.5 --strip-components=1
+
+[Open port 8080]
+firewall-cmd --zone=public --permanent --add-port=8080/tcp
+
+[Open port 443]
+firewall-cmd --zone=public --permanent --add-port=443/tcp
+
+firewall-cmd --reload
+
+cd /
+
+sh /usr/share/tomcat8.5/bin/startup.sh
+
+tail -f /usr/share/tomcat8.5/logs/catalina.out
+
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+<user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+
+4. Install PostgresSQL
+
+user 		: postgres
+password 	: p@ssGenioraD3v
+
+https://www.postgresql.org/download/linux/redhat/
+
+----------------------------------------------------------------------------------------------------------------
+Instalation Step [Use This]:
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-centos-7
+sudo yum install postgresql-server postgresql-contrib
+
+sudo systemctl start postgresql
+
+sudo systemctl stop postgresql
+
+sudo systemctl enable postgresql
+
+[Open Port]
+firewall-cmd --add-service=postgresql
+
+firewall-cmd --add-service=postgresql --permanent
+
+sudo -i -u postgres
+[Change Password]
+psql
+\password
+
+sudo systemctl restart postgresql
+
+pg_config --version
+
+firewall-cmd --permanent --add-port=5432/tcp
+
+firewall-cmd --reload
+
+----------------------------------------------------------------------------------------------------------------
+
+Note:
+1. Kalo mati lampu IP suka keganti, jadi coba cek IP table settingan postgre nya dbi
+
+c
+
+[MODIFY FILE]
+/var/lib/pgsql/data/postgresql.conf
+listen_addresses = '*' => Uncomment this
+
+
+[ADD ACCESS / Whitelist]
+/var/lib/pgsql/data/pg_hba.conf
+
+example :
+#host    all             all             [IP]/32            md5 => Format
+host    all             all             118.136.198.241/32            md5
+
+sudo systemctl restart postgresql
+
+----------------------------------------------------------------------------------------------------------------
+
+sudo -i -u postgres
+psql
+\q to Quit
+
+5. Intall nodejs
+
+yum install -y gcc-c++ make
+
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
+
+sudo yum install nodejs
+
+node -v
+
+5. Install Git
+
+sudo yum install git
+
+git --version
+
+git config --global user.name "Polly Markurin"
+
+git config --global user.email "markurin.polly@gmail.com"
+
+6. Clone Git Project
+
+git clone https://pollymarkurin@bitbucket.org/pollymarkurin/genioraapi.git
+
+7. Pull Project From Git
+
+git init
+
+git remote add origin https://pollymarkurin@bitbucket.org/pollymarkurin/genioraapi.git
+
+git pull
+
+
+8. Change user password
+passwd
+
+
+----------------------------------------------------------------------------------------------------------------
+
+Redis
+
+Instalation 
+Link : https://www.digitalocean.com/community/tutorials/how-to-install-secure-redis-centos-7
+
+sudo systemctl status redis.service
+
+making whitelist on port [no need to add bind on : /etc/redis.conf]
+1. sudo firewall-cmd --permanent --new-zone=redis
+
+2. sudo firewall-cmd --permanent --zone=redis --add-port=6379/tcp
+
+3. sudo firewall-cmd --permanent --zone=redis --add-source=client_server_private_IP
+Ex : 
+
+sudo firewall-cmd --permanent --zone=redis --add-source=110.137.236.16 && firewall-cmd --reload
+
+Note : Kalo mati lampu IP nya suka ganti, jadi cek whitelist port dbi
+
+making whitelist on redis config @redis.conf
+bind 127.0.0.1 58.65.241.124
+
+config file
+/etc/redis.conf
+
+redis-cli --scan | head -10
+
+restart
+sudo systemctl restart redis
+
+start
+sudo systemctl start redis
+
+stop
+sudo systemctl stop redis
+
+enable
+sudo systemctl enable redis
+
+redis-cli flushall
+keys *
+
+----------------------------------------------------------------------------------------------------------------
+
+chmod 777 /usr/share/web-attachment/ -R
+
+setfacl -R -d -m g::rwx /usr/share/web-attachment/
+
+setfacl -R -d -m o::rwx /usr/share/web-attachment/
+
+----------------------------------------------------------------------------------------------------------------
+HAProxy
+
+loc 	: /etc/haproxy
+
+haproxy-ssl-termination
+
+doc		: https://www.haproxy.com/blog/haproxy-ssl-termination/
+loc 	: /etc/ssl/certs/mysite.pem
+check	: https://www.ssllabs.com/ssltest
+
+frontend www.mysite.com
+    bind 10.0.0.3:80
+    bind 10.0.0.3:443 ssl crt /etc/ssl/certs/mysite.pem
+    default_backend web_servers
+	
+ps -ef | grep haproxy
+haproxy -f /etc/haproxy/haproxy.cfg
+
+----------------------------------------------------------------------------------------------------------------
+NGINX
+
+/etc/nginx
+
+nginx-ssl-termination
+
+doc		: https://www.haproxy.com/blog/haproxy-ssl-termination/
+loc 	: /etc/ssl/certs/mysite.pem
+
+nginx-subrequest-authentication
+
+https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-subrequest-authentication/
+
+service nginx reload
+
+nginx -t
+systemctl restart nginx
+
+
+----------------------------------------------------------------------------------------------------------------
+
+Transport war
+
+scp /Users/pollymarkurin/project/app-version/Administrator/Administrator.war ssh root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
+scp /Users/pollymarkurin/project/node/genioraku-api/public/example.html ssh root@58.65.241.124:/usr/share/web-attachment/html/
+
+scp /Users/pollymarkurin/project/app-version/Administrator/20201126/Administrator.war ssh root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
+scp /Users/pollymarkurin/project/app-version/Geniora-Panel/geniora-panel.war ssh root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
+scp /Users/pollymarkurin/project/node/tiny_mce_wiris/pluginwiris_engine.war ssh root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
+scp -r /Users/pollymarkurin/project/node/geniora-api-v2/public ssh root@58.65.241.124:/usr/share/web-attachment/others/
+
+scp -r /Users/pollymarkurin/project/node/geniora-api-v2/public ssh root@58.65.241.124:/usr/share/web-attachment/others/
+
+scp -r /Users/pollymarkurin/Downloads/equations/equation-4.png ssh root@58.65.241.124:/usr/share/web-attachment/others/
+
+scp -r /Users/pollymarkurin/Downloads/Android ssh root@58.65.241.124:/usr/share/web-attachment/
+
+
+p@ssGeniora:D1kali
+p@ssGeniora:D3kali
+
+https://web.geniora.com/genioraku-api/public/example.html
+https://web.geniora.com:8443/web-attachment/html/example.html
+
+ls -l --block-size=M
+
+Quiz / BankQuiz kalo pindah apps ulang dari awal (DONE)
+Profile picture ada yang nyangkut Albert Christian (DONE)
+Ada user yang langganan nya sudah abis, tapi konten yg k unlock (DONE)
+
+
+Update Backend 1.3.1 
+Content dari search activity error / force close (DONE)
+Bugs input tanggal di Register dan Review Pembelian (kalo bulan 10 jadi 010) (DONE)
+Redeem voucher start dari access terakhir (sebelumnya hari ini) (DONE)
+Confirm Order update access start dari access tarakhir (DONE)
+
+Update 1.3.1 
+- [BUGS] date picker bulan 10 jadi 010
+- [BUGS] QUIZ & BANK SOAL dari Search Force Close
+- BaseAppCompatActivityV2
+- Kadang ada user yang force close waktu buka applikasi dari splashscreen, pas login langsung force close
+- Refresh Student Card setelah langganan / voucher berhasil di gunakan
+
+
+- Promo subscription by date (on register, on login etc)
+
+Promo Model
+1. Refferal code
+2. Voucher
+
+https://web.geniora.com:8443/web-attachment/others/saya-bisa/
+
+verification_01.png
+verification_02.png 
+ic_logo_main.png
+by_geniora.png
+
+https://web.geniora.com/genioraku-api/v1/IDN/app/view/U2FsdGVkX198SsxxsTYZtPhdnXvzuQeMi6lBgMp6KeoV%2FnOaqRZtpcWfO9ZiONuPDr2hAVEK0XtrN%2FBkbzOBHQ%3D%3D
+
+https://web.geniora.com/genioraku-api/v1/IDN/app/view/U2FsdGVkX1/EzcTQrFmufYZvk/mFo6JOM0OqHWIaNMeEmYXC0Wnj7fO8te0QRyQ1OR84/fc0gjiI1QbvVDDZUA==
+
+https://web.geniora.com/genioraku-api/v1/IDN/app/view/4731b08d-b309-499f-9ddd-fd1d604e33d5

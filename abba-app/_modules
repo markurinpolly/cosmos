@@ -1,0 +1,51 @@
+{
+	"module" : "connects"
+}
+
+{
+	"module" : "devotions"
+}
+
+{
+	"module" : "discovers"
+}
+
+{
+	"module" : "connects"
+}
+
+{
+	"module" : "downloads"
+}
+
+{
+	"module" : "events"
+}
+
+{
+	"module" : "givings"
+}
+
+{
+	"module" : "locations"
+}
+
+{
+	"module" : "news"
+}
+
+{
+	"module" : "onlines"
+}
+
+{
+	"module" : "sermons"
+}
+
+{
+	"module" : "settings"
+}
+
+{
+	"module" : "users"
+}

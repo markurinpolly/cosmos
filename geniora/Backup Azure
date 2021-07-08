@@ -1,0 +1,5 @@
+Backup Azure:
+1. Backup postgres DB
+2. Backup Attachment File
+3. Delete all DB Data
+4. Delete all Attachment Data

@@ -1,0 +1,24 @@
+domain: abbalovechurch.org
+ip public: 147.139.161.252
+
+port ssh: 185
+ftp host: abbalovechurch.org
+ftp user: polly
+ftp passwd: rare1234!
+147.139.161.252
+
+utk api: dev.abbalovechurch.org
+utk public & admin: www.abbalovechurch.org
+
+ftp:
+1. Polly => api
+2. Berny => admin & public
+*username and password akan saya japri masing-masing ya
+
+server: 
+user root sudah disabled
+port ssh: 185
+
+
+ssh -p 185 -i /Users/pollymarkurin/project/cosmos/abba-app/id_rsa_polly_
+.txt polly@147.139.161.252

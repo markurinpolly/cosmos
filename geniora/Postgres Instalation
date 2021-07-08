@@ -1,0 +1,72 @@
+# Postgres Instalation
+
+[https://www.postgresql.org/download/linux/redhat/]
+
+
+##### Option: 
+version : 11
+
+CentOS version 7
+
+x86_64
+
+___
+
+yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+
+yum install postgresql11
+
+
+yum install postgresql11-server
+
+##Post Instalation
+
+/usr/pgsql-11/bin/postgresql-11-setup initdb
+systemctl enable postgresql-11
+systemctl start postgresql-11
+
+[Open Port]
+firewall-cmd --add-service=postgresql
+
+firewall-cmd --add-service=postgresql --permanent
+
+sudo -i -u postgres
+[Change Password]
+psql
+\password
+
+- \q
+- exit
+
+sudo systemctl restart postgresql-11
+
+firewall-cmd --permanent --add-port=5432/tcp
+
+firewall-cmd --reload
+
+##
+
+Note:
+
+1. Kalo mati lampu IP suka keganti, jadi coba cek IP table settingan postgre nya dbi
+
+sudo find / -name pg\*.conf
+
+[MODIFY FILE]
+/var/lib/pgsql/data/postgresql.conf
+listen_addresses = '*' => Uncomment this
+
+
+[ADD ACCESS / Whitelist]
+/var/lib/pgsql/data/pg_hba.conf
+
+example :
+
+host    all             all             [IP]/32            md5 => Format
+
+host    all             all             118.136.196.180/32            md5
+
+sudo systemctl restart postgresql-11
+
+Done!!

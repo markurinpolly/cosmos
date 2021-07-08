@@ -1,0 +1,91 @@
+SELECT 
+	_id, vdcourse.content_type as modulecode, m.content_type, content_id, title, classname, subject, shortdesc, banner_code, no FROM 	
+(
+	SELECT 
+		a._id, 
+		a.content_type, 
+		a.content_id, 
+		a2.title, 
+		a2.classname, 
+		a2.subject, 
+	    a2.shortdesc, 
+	    a2.banner_code,
+	    a.no
+	FROM production.md_course a
+	JOIN production.m_article a2 ON a.content_id = a2._id
+	WHERE a.content_type::text = 'ARTI'::text
+	UNION 
+	SELECT 
+		b._id, 
+		b.content_type, 
+		b.content_id, 
+		b2.title, 
+		b2.classname, 
+		b2.subject, 
+		b2.shortdesc, 
+		b2.banner_code,
+		b.no
+	FROM production.md_course b
+	JOIN production.m_books b2 ON b.content_id = b2._id
+	WHERE b.content_type::text = 'BOOK'::text
+	UNION 
+	SELECT 
+		c._id, 
+		c.content_type, 
+		c.content_id, 
+	   	c2.title, 
+	   	c2.classname, 
+	   	c2.subject, 
+	   	c2.shortdesc, 
+	   	'',
+	   	c.no
+	FROM production.md_course c
+	JOIN production.m_youtube c2 ON c.content_id = c2._id
+	WHERE 
+	c.content_type::text = 'YOU'::text
+	UNION 
+	SELECT
+		c._id, 
+	 	c.content_type, 
+	 	c.content_id, 
+	 	c2.title, 
+	 	c2.classname, 
+	 	c2.subject, 
+	 	c2.shortdesc, 
+	 	c2.banner_code,
+	 	c.no
+	FROM production.md_course c
+	JOIN production.m_video2 c2 ON c.content_id = c2._id
+	WHERE 
+	c.content_type::text = 'VID2'::text
+	UNION 
+	SELECT 
+		d._id, 
+		d.content_type, 
+		d.content_id, 
+		d2.title, 
+	  	d2.classname, 
+	  	d2.subject, 
+	  	d2.shortdesc, 
+	  	d2.banner_code,
+	  	d.no
+	FROM production.md_course d
+	JOIN production.m_quiz d2 ON d.content_id = d2._id
+	WHERE d.content_type::text = 'QUIZ'::text
+	UNION 
+	SELECT 
+		e._id, 
+		e.content_type, 
+		e.content_id, 
+		e2.title, 
+		e2.classname, 
+	   	e2.subject, 
+	   	e2.shortdesc, 
+	   	e2.banner_code,
+	   	e.no
+	FROM production.md_course e
+	JOIN production.m_audio e2 ON e.content_id = e2._id
+	WHERE e.content_type::text = 'AUDIO'::text
+) AS vdcourse 
+LEFT JOIN production.m_module m ON m.modulecode = vdcourse.content_type
+ORDER BY _id, vdcourse.content_type, content_id;

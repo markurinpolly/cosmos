@@ -1,0 +1,21 @@
+{
+	"form" : "NEW",
+    "full_name": "full name",
+    "phone": "phonr",
+	"gender": "M",
+	"pob": "pob",
+	"dob": "2020-06-20",
+	"address": "address",
+	"pcr_type": "Prayer",
+	"note": "",
+	"service": ""
+}
+
+-- Join Komsel
+{
+	"form" : "JOINKOM",
+    "full_name": "full name",
+    "phone": "phone",
+	"years_visiting": 1,
+	"visiting_another_church": 0
+}

@@ -1,0 +1,38 @@
+Geniora APP Test Step by Step
+
+Login Screen
+1. Login Standard OK
+2. Login Google OK
+4. Daftar / Register OK
+
+SUB : Profile
+1. Profile Setting [Page] OK
+2. Profile Setting [Change] OK
+3. Change Password OK
+4. Rapor OK
+5. File Manager OK
+
+Member / Non-Member
+1. Login using member account
+2. Login using non-member account OK
+3. Login using admin account OK
+
+Main
+1. Check IPA, IPS, Matematika, PKN Course [Page]
+2. Check IPA, IPS, Matematika, PKN Course [Page] (After Change class Ex: 4 to 5)
+3. Check Stepview OK
+4. Play video OK
+5. Open book OK
+6. Open + Do Quiz + Coba lagi OK
+7. Open + Do BankQuiz + Coba lagi OK
+8. Check Rapor for the result OK
+9. Logout and Re-Login OK
+
+non-member account
+pollymarkurin20
+password
+
+admin account
+geniora.app@gnail.com
+Genio1212.,
+

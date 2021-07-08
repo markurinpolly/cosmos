@@ -1,0 +1,33 @@
+
+Change Owner of Directory
+sudo chown -R username:group directory
+
+[Virtual Network]
+13.76.154.113
+genioradevnew.southeastasia.cloudapp.azure.com
+GenioraDev
+p@ssGenioraD3v
+
+[Virtual Network HAProxy]
+13.76.153.10
+GenioraHA
+p@ssGenioraHA
+
+[Virtual Network NGINX]
+genioraapps.southeastasia.cloudapp.azure.com
+23.101.16.217
+GenioraNX
+p@ssGenioraNX
+
+[Postgres SQL]
+jdbc:postgresql://genioradev.postgres.database.azure.com:5432/postgres
+GenioraDev@genioradev
+p@ssGenioraD3v
+
+(psql command)
+C:\Program Files\PostgreSQL\11\bin>
+psql --host=genioradev.postgres.database.azure.com --port=5432 --username=GenioraDev@genioradev --dbname=postgres
+
+
+Change time zone to WIB
+sudo ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime

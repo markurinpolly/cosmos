@@ -1,0 +1,24 @@
+{
+    "name": "Maizonette",
+    "address": "Tanjung Duren Utara", 
+    "longitude": "-6.169925", 
+    "latitude": "106.779282", 
+    "phones": ["081299990000", "081900001188"],
+    "services": [
+        {
+        	"name": "lt3", 
+        	"schedule": 
+        	[
+        		{"name": "Umum 1 : 08.30 (disertai gereja anak)"}, 
+        		{"name": "Umum 2 : 10.30 (disertai gereja anak)"}, 
+        		{"name": "Umum 3 : 13.00 (kaum perantauan)"}
+        	]
+    	},
+        {	"name": "lt2", 
+        	"schedule": 
+        	[
+        		{"name": "A2G Youth 1 : 09.00"}
+        	]
+    	}
+    ]
+}

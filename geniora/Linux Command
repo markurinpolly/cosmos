@@ -1,0 +1,41 @@
+GenioraDev
+geniora.southeastasia.cloudapp.azure.com
+Username : GenioraDev
+p@ssGenioraD3v
+
+Postgres
+geniora-dev.postgres.database.azure.com
+GenioraDev@geniora-dev
+p@ssGenioraD3v
+
+Change time zone to WIB
+sudo ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+
+139.228.8.85
+
+PuTTY Command
+$ tar xvzf file.tar.gz -C /path/to/somedirectory
+
+/sbin/service postgresql-10 status
+
+sudo -u postgres -i
+\q
+exit
+
+(psql command)
+C:\Program Files\PostgreSQL\11\bin>psql --host=geniora-dev.postgres.database.azure.com --port=5432 --username=GenioraDev@geniora-dev --dbname=postgres
+
+Backup
+pg_dump -U user db_name > archive_name.dump 
+
+Restore
+psql -U user db_name < /directory/archive.dump
+
+psql -h localhost -U postgres -p 5432 my_new_database < my_old_database.backup
+ex :
+psql --host=geniora-dev.postgres.database.azure.com -U GenioraDev@geniora-dev -p 5432 postgres < D:/backup_postgres/backup.dump
+
+Connect to Azure Postgres
+psql --host=<yourserver> --port=<port> --username=<server admin login> --dbname=<database name>
+ex :
+psql --host=geniora-dev.postgres.database.azure.com --port=5432 --username=GenioraDev@geniora-dev --dbname=postgres

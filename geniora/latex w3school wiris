@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script src="https://web.geniora.com/pluginwiris_engine/app/WIRISplugins.js?viewer=image"></script>
+</head>
+<body>
+
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mn>20</mn></mfrac></math></p>
+
+</body>
+</html>

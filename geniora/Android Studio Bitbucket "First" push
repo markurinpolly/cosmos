@@ -1,0 +1,19 @@
+Android Studio Bitbucket "First" push
+
+Create Bitbucket Repo Without .gitignore
+(Include .gitignore? : NO)
+
+Create .gitignore file @root project directory
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+
+VCS -> Enable Version Control Integration...
+[Terminal] git remote add origin https://pollymarkurin@bitbucket.org/pollymarkurin/genioraku-v1.git
+✅ :: Commit..
+[Terminal] git push -u origin master

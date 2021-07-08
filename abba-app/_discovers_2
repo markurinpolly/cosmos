@@ -1,0 +1,371 @@
+#GROW -- no need file resources
+
+##	NOTES
+###	title_img 			(perlu diinfo)
+###	galleries 			(perlu diinfo)
+
+
+{
+    "title": "LTC Champions",
+	"title_img": "LTC Champions",
+	"galleries": [
+		"LTC Champions",
+		"LTC Champions"
+	],
+    "short_description": "<p>Kami mempercayai bahwa setiap orang harus melalui perjalanan rohani untuk bertumbuh menjadi semakin serupa dengan Kristus. <strong>Life Transformation Center</strong> adalah tempat dimana tiap-tiap orang mengalami perjumpaan dengan kebenaran Firman Tuhan yang mengubahkan hidup. LTC Champions adalah awal perjalanan dimana setiap orang dituntun dan diajarkan tentang prinsip-prinsip untuk menjadi seorang PEMENANG.</p>",
+    "description": "<p>LTC Champions merupakan pembinaan rohani dasar untuk menjangkau dan memperlengkapi orang-orang yang belum atau baru percaya agar mengalami perjumpaan dengan Kristus, memperoleh keselamatan, pemulihan, kuasa serta perubahan hidup. sehingga setiap orang yang percaya dapat terlibat melayani Tuhan dan menjadi pemurid bagi orang percaya baru lainnya.</p><p>LTC Champions diadakan sebanyak 9 kali pertemuan dalam kurun waktu 2,5 bulan.<br>dengan jumlah total 8 kali pertemuan berbentuk kelas pembinaan dan 1 kali Champions Gathering (dilaksanakan dengan menginap 2 hari 1 malam atau non menginap)</p><p>Syarat untuk mengikuti:<br>Terbuka bagi umum dan dapat menyertakan No telp yang bisa dihubungi.</p><p>Contact person: Marcel / 08989033563</p>",
+    "group":"GROW",
+	"link": 
+    {
+        "title": "LTC Team Builders",
+        "description": "Perjalanan spiritual yang terdiri dari kelas-kelas pengajaran yang akan membantu setiap kita untuk mengenal dan mengalami Kristus melalui proses pemuridan", 
+        "color": "#7ffc03"
+    },
+    "socials":
+    {
+        "facebook": "https://www.facebook.com/abbalovebarat",
+        "instagram": "https://www.instagram.com/abbalovebarat/?hl=id",
+        "youtube": "https://www.youtube.com/watch?v=MNJMQjtuv24&feature=youtu.be"
+    },
+	"resources": [
+        { 
+			"title": "title", 
+			"description": "description" 
+		}
+    ],
+	"resources_thumbnail": [
+		"LTC Champions",
+		"LTC Champions"
+	],
+	"resources_file": [
+		"LTC Champions",
+		"LTC Champions"
+	]
+}
+
+
+{
+    "title": "LTC Teambuilders",
+    "short_description": "<p>Gereja adalah tempat dimana setiap pribadi dibangun, dikasihi kemudian membangun dan mengasihi sesamanya. LTC Teambuilders adalah perjalanan berikutnya dimana setiap orang dipersiapkan untuk menjadi pembangun rumah Tuhan.</p>",
+    "description": "<p><strong>LTC Team Builders&nbsp;</strong>adalah Pelatihan yang diadakan secara khusus menolong setiap pekerja &nbsp;untuk menemukan potensi dan berjalan dalam panggilan yang khusus.</p><p>LTC Team Builders dilaksanakan sebanyak 6 kali pertemuan dalam &nbsp;kurun waktu 1,5 bulan.<br>dilaksanakan dalam bentuk Pra Camp 1x pertemuan<br>Excellent servanthood Camp yang diadakan selama 3 hari 2 malam<br>dan kelas LTC Team builders yang dilakukan sebanyak 3x pertemuan&nbsp;</p><p>Syarat untuk mengikuti:&nbsp;<br>Telah menyelesaikan LTC Champions, aktif terlibat dalam pemuridan one on one dan Komsel, serta mendapatkan rekomendasi &nbsp;pemimpin setempat.<br>CP: Marcel / 08989033563</p>",
+    "group":"GROW"
+}
+
+{
+    "title": "LTC Leaders",
+    "short_description": "<p>Setiap orang adalah pemimpin. Dimulai dari memimpin diri sendiri, keluarga, kelompok kecil, massa yang besar atau bahkan dunia. Pemimpin lahir dari sebuah proses pembelajaran yang tidak singkat. LTC Leaders mempersiapkan orang percaya untuk menjadi pemimpin di masa sekarang dan yang akan datang.</p>",
+    "description": "<p><strong>LTC Leaders&nbsp;</strong>adalah Pelatihan yang mempersiapkan setiap peserta menjadi pemimpin masa depan yang dapat bekerjasama di dalam tim.<br><br>LTC Leaders dilaksanakan dalam kurun waktu 3 minggu, berupa pertemuan Pra Camp sebanyak 2x Pertemuan dan dilanjutkan dengan Pelatihan Leadership Boot Camp (LBC) yang diadakan selama 3 hari 2 malam.<br><br>Syarat untuk bisa Join:<br>Telah menyelesaikan pelatihan LTC Team Builders, aktif terlibat dalam pemuridan one on one dan komsel, serta mendapatkan rekomendasi dari pemimpin setempat.</p><p>CP: Marcel / 08989033563</p>",
+    "group":"GROW"
+}
+
+
+
+
+
+#NEXTGEN
+
+##	NOTES
+###	title_img 					(perlu diinfo)
+###	galleries 					(perlu diinfo)
+###	link.description 			(perlu diinfo)
+###	socials.facebook 			(perlu diinfo)
+###	socials.instagram 			(perlu diinfo)
+###	socials.youtube 			(perlu diinfo)
+### resources 					(belum ada)
+### Special One(?)				(belum ada deskripsi apa-apa)
+
+
+{
+    "title": "Abbakids",
+    "short_description": "<p>Seperti anak-anak panah&nbsp;di tangan pahlawan, demikianlah anak-anak pada masa muda. &ndash; Mazmur 127:4</p><p>Abbakids adalah gereja anak dengan visi menjadikan anak anak sebagai Murid Kristus dari semenjak usia muda.&nbsp;</p>",
+    "description": "<p>Sebagai gereja anak yang berpusatkan kepada Kristus maka di abbakids setiap anak akan dibina, diperlengkapi dan dipersiapkan untuk menjadi murid Kristus yang mengenal panggilan mereka dan siap diutus.</p><p>Ibadah abbakids dilaksanakan setiap minggu bersama dengan Ibadah Umum. Selain itu abbakids akan melakukan camp setiap tahun 1x sebagai bagian dari Spiritual Journey dari masing &ndash; masing anak.</p><p>CP: Herry Husada / 08161643180 &amp; Adrian Nugraha / 0817188488</p>",
+    "link": 
+    {
+        "title": "Abbakids Resources",
+        "description": "Abbakids resources description", 
+        "color": "#7ffc03"
+    },
+    "socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"NEXTGEN"
+}
+
+{
+    "title": "Abbalove to Generation (A2G)",
+    "short_description": "<p>Komunitas generasi muda yang mengalami penebusan dan diurapi Tuhan. Orang-orang muda yang bangkit dan selalu memberi yang terbaik untuk menghadirkan kasih Bapa di tengah-tengah generasinya. Orang-orang &nbsp;muda yang mengalami pertumbuhan melalui pemuridan dan komunitas sel dimana setiap individu berkumpul, dikasihi, dibentuk untuk memaksimalkan setiap potensi &amp; memenuhi panggilan yang Tuhan berikan.</p>",
+    "description": "<p><strong><em>R.A.R.E is our identity (Lukas 7 : 9)</em></strong></p><ul><li>1.&nbsp;<strong><em>Redeemed &ndash; Ditebus (1 Petrus 1:18-21)</em></strong></li></ul><p>Kami percaya kehidupan kami tidak hanya diampuni, tetapi ditebus oleh Yesus Kristus. Diampuni berarti setiap dosa dihapuskan, tetapi penebusan berbicara tentang pertukaran yang menjadikan kehidupan kami bukan hanya tak berdosa tetapi menjadi layak. Dengan bukti penebusan Kristus, kami mempercayai bahwa kami adalah pribadi yang dikasihi. Dengan demikian, kami dapat memancarkan kasih Bapa dengan menjadi&nbsp;<em>agent of love</em> bagi orang-orang di sekitar kami.</p><ul><li>2.&nbsp;<strong>Anointed &ndash; Diurapi (2 Korintus 21-22)</strong></li></ul><p>Sebagai seorang anak, kami adalah pribadi yang di urapi oleh Tuhan. Kami percaya, bukan dengan kuat gagah kami tetapi Tuhan-lah yang memberikan hikmat, otoritas dan kuasa sehingga apapun yang kami lakukan akan berhasil demi kemuliaan-Nya.</p><ul><li>3.&nbsp;<strong>Rise &ndash; Bangkit (Mazmur 20:6-8)</strong></li></ul><p><em>&ldquo;Bagaimana orang yang terjatuh dan tetap diam dapat menolong orang lain untuk bangkit?&rdquo;</em></p><p>Sebagai pribadi yang sudah ditebus dan diurapi, kami bangkit dari kesalahan, kegagalan, bahkan dosa di masa lalu. Karena kami percaya, proses bagaimana kami bangkit dan menang, akan menjadi kesaksian &nbsp;yang nyata bagi generasi muda agar dapat bangkit &amp; mengalami Kristus.</p><ul><li>4.&nbsp;<strong>Excellent &ndash; Memberikan yang terbaik (Kolose 3:23)</strong></li></ul><p>Kami terus belajar untuk selalu memberikan yang terbaik dalam setiap hal yang kami kerjakan demi nama Tuhan dipermuliakan dan menjadi teladan untuk orang-orang di sekitar kami.</p><p><strong><em>&nbsp;</em></strong></p><p>A2G terbagi kedalam dua kelompok usia yaitu A2G Youth (age 12 &ndash; 17) &amp; A2G &ndash;Mahasiswa &amp; Profesional (age 18-35). Untuk jadwal dan lokasi ibadah dapat dilihat di menu Locations. Dan untuk bergabung dengan komunitas kami bisa klik di&nbsp;sini.</p>",
+    "link": 
+    {
+        "title": "Abbalove to Generation (A2G) Resources",
+        "description": "Abbalove to Generation (A2G) resources description", 
+        "color": "#000000"
+    },
+    "socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"NEXTGEN"
+}
+
+{
+    "title": "Special one Community",
+    "short_description": "<p>Komunitas bagi orang tua yg memiliki anak2 berkebutuhan khusus disertai ibadah anak inklusi yang di peruntukan bagi anak-anak spesial dan anak-anak pada umumnya. Kelas anak melibatkan para volunteer yg telah ditraining khusus untuk mengajarkan sosialisasi dan nilai-nilai firman Tuhan agar setiap anak dapat bertumbuh di dalam Tuhan.&nbsp;</p>",
+    "description": "<p>Komunitas yang disertai ibadah anak inklusi ini diadakan sebulan 1x (Sabtu Pk.16.00). Untuk informasi lebih lanjut dapat menghubungi : Olivia Joso - 0855 9900 239</p>",
+    "link": 
+    {
+        "title": "Special one Community Resources",
+        "description": "Special one Community resources description", 
+        "color": "#000000"
+    },
+    "socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"NEXTGEN"
+}
+
+
+
+
+#SENIOR
+
+##	NOTES
+###	title_img 					(perlu diinfo)
+###	socials.facebook 			(perlu diinfo)
+###	socials.instagram 			(perlu diinfo)
+###	socials.youtube 			(perlu diinfo)
+
+{
+    "title": "Joyful Abbalove Community",
+    "short_description": "",
+    "description": "<p>Usia tidak bisa membatasi Tuhan bekerja didalam diri seseorang. Ada banyak kisah pahlawan iman yang justru dipakai Tuhan diusianya yang sudah lanjut. Joyful Abbalove Community (JAC) adalah komunitas dimana para senior bukan menjadi object tetapi menjadi subject. Mereka tetap berfungsi dan melayani sekalipun sudah berusia lanjut.</p><p>Aktivitas rutin dari JAC adalah ibadah bersama sebanyak 1 kali setiap bulan dan komsel setiap hari kamis.</p>",
+    "link": 
+    {
+        "title": "Joyful Abbalove Community Resources",
+        "description": "Joyful Abbalove Community Resources Description", 
+        "color": "#000000"
+    },
+	"socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"SENIOR"
+}
+
+
+
+
+
+#EQUIP
+
+##	NOTES
+###	title_img 					(perlu diinfo)
+###	galleries 					(perlu diinfo)
+###	link.description 			(perlu diinfo)
+###	socials.facebook 			(perlu diinfo)
+###	socials.instagram 			(perlu diinfo)
+###	socials.youtube 			(perlu diinfo)
+### resources 					(belum ada)
+
+{
+    "title": "Christian Men's Community",
+    "short_description": "<p>CMC adalah komunitas pelatihan bagi para pria baik single, menikah, maupun duda agar menggenapi panggilan hidupnya sebagai Imam, Nabi dan Raja dalam setiap aspek kehidupan. </p>",
+    "description": "<p>CMC merupakan komunitas pria yang melebur ke dalam komsel namun juga memiliki pertemuan2 pria secara rutin selama 2 mgg sekali setiap hari Selasa. Pertemuan ini bersifat non-formal dan lebih banyak membahas topik2 seputar kehidupan pria antara lain:</p><p>- kesehatan</p><p>- keuangan</p><p>- sex</p><p>- komunikasi praktis</p><p>- kepemimpinan</p><p>- dsb.</p><p>CMC bekerja sama dengan CMNI (Christian Mens Network Indonesia) dalam mengadakan camp Pria Sejati modul 1-3 yang tindak lanjut (follow-up) nya akan dilakukan oleh CMC dan komsel.&nbsp;</p><p>Selain itu CMC juga mengadakan kelas pemuridan khusus para Ayah yang hanya dibuka 2 periode dalam 1 tahun. Kelas ini berbentuk tatap muka dan diskusi berdurasi 75 menit secara online dengan 5x pertemuan setiap periodenya. 1 pertemuan 1 minggu sekali. Di kelas ini akan membahas khusus tentang fungsi Ayah yang memberikan 4 kebutuhan utama kepada anak-anaknya. Kelas ini bekerjasama dengan TWNAF (The World Needs A Father) dan INAF (Indonesia Needs A Father).</p><p>Setiap pria dapat terlibat di CMC baik sebagai partisipan, pembina, maupun pembicara.</p><p>Silahkan bergabung dengan pertemuan rutin kami setiap selasa jam 19:00 wib melalui link berikut ini. Kami yang akan menghubungi Anda.&nbsp;</p><p>https://www.cognitoforms.com/CBrio1/CMCSignup</p><p>Contact :</p><p>Ryan 081908092222</p><p>Ferry 082179830928</p>",
+    "link": 
+    {
+        "title": "CMC Resources",
+        "description": "CMC resources description", 
+        "color": "#000000"
+    },
+    "socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"EQUIP"
+}
+
+{
+    "title": "Christian Ladies Community",
+    "short_description": "<p>CLC adalah komunitas pelatihan bagi para wanita untuk dapat bertumbuh dlm pengenalan akan Tuhan sehingga dapat melakukan fungsinya sbg penolong.</p>",
+    "description": "<p>Pertemuan komunitas wanita dilakukan sebanyak 1x/bulan.</p><p>CLC diperlengkapi dengan bbrp kegiatan agar para wanita dapat bertumbuh secara maksimal &nbsp;baik dari sisi jasmani maupun rohani, yaitu :</p><p>1. Clc gathering&nbsp;</p><p>Pertemuan khusus yg diadakan sebanyak 1x/tahun, membahas topik-topik yang relevan dengan pembicara yg kompeten di bidang nya.&nbsp;</p><p>2. Clc sport&nbsp;</p><p>Wadah bagi para wanita untuk melakukan olah raga bersama. CLC sport diadakan setiap selasa dan kamis jam 8.30 di gedung gereja Abbalove Greenville Maizonette.</p><p>3. CLC prayer&nbsp;</p><p>Momen doa bagi para wanita yang diadakan pada hari rabu pertama setiap bulannya.</p><p>4. Clc workshop.&nbsp;</p><p>Pelatihan dari mentor-mentor spesialis &nbsp;bagi para wanita dalam mengembangkan keahlian-keahlian yang berguna bagi kehidupan sehari-hari. Contohnya : make up, memasak, menanam hidroponik, membuka bisnis dari rmh, dll.</p><p>Contact :</p><p>+6282114071026</p><p>instagram @clcabbalovebarat</p>",
+    "link": 
+    {
+        "title": "CLC Resources",
+        "description": "CLC resources description", 
+        "color": "#000000"
+    },
+    "socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"EQUIP"
+}
+
+{
+    "title": "Christian Parenting Community",
+    "short_description": "<p>CPC adalah Komunitas Pelatihan bagi para orangtua supaya memiliki Visi dan Komitmen Tanggung Jawab didalam Mendidik dan Memuridkan Anak Sesuai Kebenaran Firman Tuhan</p>",
+    "description": "<p>CPC hadir untuk memperlengkapi Orang Tua / Calon Orang Tua dengan Dasar - Dasar Firman Tuhan serta Parenting Skill agar setiap orang tua / calon orang tua dapat mendidik dan memuridkan anak2 mereka sampai anak mereka siap diutus untuk memenuhi panggilan Tuhan didalam hidup mereka.</p><p>Aktivitas CPC:</p><p>1. Seminar Parenting: Equipping Ortu / Calon Ortu dengan parenting skills yang up to date dengan perkembangan dunia anak saat ini.</p><p>2. Parenting Class : Equipping ortu / calon ortu dengan dasar2 kebenaran firman Tuhan didalam menjalankan mandat mereka sebagai orang tua.</p><p>Contact &nbsp;: 081210730484</p><p>Instagram: @cpc.abbalove</p>",
+    "link": 
+    {
+        "title": "CPC Resources",
+        "description": "CPC resources description", 
+        "color": "#000000"
+    },
+    "socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"EQUIP"
+}
+
+{
+    "title": "Christian Businessman & Professional Community",
+    "short_description": "<p>CBC adalah komunitas pelatihan bagi para pebisnis dan profesional / karyawan dalam menerapkan prinsip dan nilai-nilai kerajaan Allah dalam domain bisnis / pekerjaan.</p>",
+    "description": "<p>Kegiatan CBC :</p><p>1. Seminar / Workshop</p><p>Diadakan 3-4 x setiap tahunnya, topik-topik yang menyesuaikan dengan perkembangan bisnis, ekonomi atau profesional terbaru dengan pembicara yang kompeten di bidangnya.</p><p>2. Komsel / Gathering Businessman</p><p>Diadakan 1x sebulan untuk memfasilitasi para pebisnis dalam menjalin network, saling sharing dan menguatkan dalam mempraktekkan nilai kerajaan pada usaha yang dijalankan.</p><p>Contact : Tommy Yu : +62881-121-6661 (WhatsApp)</p>",
+    "link": 
+    {
+        "title": "CBC Resources",
+        "description": "CBC resources description", 
+        "color": "#000000"
+    },
+    "socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"EQUIP"
+}
+
+{
+    "title": "REVOLUTION PRE MARRIAGE",
+    "short_description": "<p>RPM adalah pelatihan khusus bagi pasangan-pasangan yang sedang mempersiapkan pernikahan. Melalui RPM, setiap pasangan akan dituntun untuk memetakan kesiapan mereka, menganalisa potensi masalah, dan dilatih untuk memiliki semua pemahaman dan skill yang dibutuhkan untuk sebuah kehidupan pernikahan.</p>",
+    "description": "<p>RPM bukan hanya berisi kelas, baik berupa temu muka atau online, tetapi setiap pasangan akan ditemani oleh para mentor yang adalah pasangan suami istri berpengalaman.</p><p>RPM dirancang untuk menjadi sebuiah pengalaman pembelajaran yang seru dan fun. Disini semua peserta RPM mendapatkan minimal 5 jenis tes yang memetakan secara utuh mengenai kesiapan untuk menikah dan titik-titik potensi konflik maupun karakteristik hubungan yang sedang dijalani. Terdapat juga board game challenge yang akan memberikan pengalaman belajar melalui permainan yang dikembangkan secara orisinil oleh tim RPM.</p><p>RPM MODULES:</p><p>&bull;The Purpose of Marriage</p><p>&bull;Covenant Marriage</p><p>&bull;Psychology of Cheating &amp; Lust</p><p>&bull;The Secret of Intimacy&nbsp;</p><p>&bull;Power of Covering</p><p>&bull;Building Endurance in Relationship</p><p>&bull;Managing Personality Differences</p><p>&bull;Managing Believes Differences</p><p>&bull;Emotional Management In Relationship</p><p>&bull;Conflict Resolution</p><p>&bull;Communication in Marriage</p><p>&bull;Role Management in Marriage Life</p><p>&bull;Financial Management in Marriage</p><p>&bull;New Way of Parenting</p><p>&bull;Sex in Marriage (private session)</p><p>Contact : Veebe - +62 812-8709-7818</p><p>Instagram : @revolution.premarriage</p>",
+    "link": 
+    {
+        "title": "RPM Resources",
+        "description": "RPM resources description", 
+        "color": "#000000"
+    },
+    "socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"EQUIP"
+}
+
+{
+    "title": "Personal Development Assistance Community",
+    "short_description": "<p>PDA.Com adalah komunitas pelatihan untuk para pemimpin, pelayan, dan jemaat supaya mengalami pemulihan gambar diri dan mampu menang atas konflik emosional dan keterikatan dosa.</p>",
+    "description": "<p>Didalam PDA.Com setiap peserta akan dibimbing untuk menemukan akar persoalan/penyebab konflik emosional dan keterikatan dosa, lalu dapat mengerti bagaimana membuang akar persoalan tersebut sehingga bisa mengasihi diri sendiri dan orang lain sama seperti TUHAN telah mengasihi dan dapat mencapai potensi maksimal untuk kemuliaan TUHAN.</p><p>AKTIVITAS PDA.COM :</p><p>1. Fokus pengajaran: 4 Kebenaran Salib KRISTUS, bahwa kita sudah dilahirkan baru, dibenarkan, diterima, dan didamaikan. Ini esensi keberhargaan kita.</p><p>2. Kelas dan kelompok pembinaan. Sebagai media menemukan akar konflik emosional &amp; keterikatan dosa.</p><p>3. Konfes kebenaran, sebagai media mengalahkan tipu daya iblis yang tertanam di alam bawah sadar.</p><p>4. Renungan Firman Tuhan, sebagai media menghancurkan tipu daya Iblis setiap hari dan mengganti pola pikir kita dengan kebenaran keberhargaan diri.</p><p>5. Perekrutan pembina baru untuk melayani pada periode berikutnya, sebagai cara memaksimalkan pemulihan.</p><p>PDA.COM diadakan sebanyak 1 periode setiap tahun di bulan Februari sampai Mei. Kelas diadakan dalam 6 - 8 pertemuan dengan gathering 1 hari pada akhir pertemuan.</p><p>Contact :</p><p>Justina (Lia) -- 0899-8446-106</p><p>Reynaldo (Aldo) -- 0813-9029-5925</p>",
+    "link": 
+    {
+        "title": "PDA.Com Resources",
+        "description": "PDA.Com resources description", 
+        "color": "#000000"
+    },
+    "socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"EQUIP"
+}
+
+
+
+
+
+
+
+#WORSHIP
+
+##	NOTES
+###	socials.facebook 			(perlu diinfo)
+###	socials.instagram 			(perlu diinfo)
+###	socials.youtube 			(perlu diinfo)
+
+{
+    "title": "Abbaworship",
+    "short_description": "",
+    "description": "<p>Abbaworship adalah tim pujian dan penyembahan dari Abbalove Barat.</p><p>Untuk membangun Home of Worship sebagai salah satu fokus dari Abbalove Barat, Abbaworship menekankan kepada: kehidupan setiap hari sebagai ekspresi penyembahan yang sejati, pengenalan akan Yesus sebagai fokus utama dari penyembahan, dan lagu/nyanyian/musik sebagai salah satu ekspresi keintiman untuk mengungkapkan ucapan syukur, deklarasi iman, dan kasih kepada Tuhan.</p>",
+    "link": 
+    {
+        "title": "Abbaworship Resources",
+        "description": "Abbaworship Resources Description", 
+        "color": "#000000"
+    },
+	"socials":
+    {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "group":"WORSHIP"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Template
+
+
+{
+    "title": "",
+    "short_description": "<p>Kami mempercayai bahwa setiap orang harus melalui perjalanan rohani untuk bertumbuh menjadi semakin serupa dengan Kristus. <strong>Life Transformation Center</strong> adalah tempat dimana tiap-tiap orang mengalami perjumpaan dengan kebenaran Firman Tuhan yang mengubahkan hidup. LTC Champions adalah awal perjalanan dimana setiap orang dituntun dan diajarkan tentang prinsip-prinsip untuk menjadi seorang PEMENANG.</p>",
+    "description": "<p>LTC Champions merupakan pembinaan rohani dasar untuk menjangkau dan memperlengkapi orang-orang yang belum atau baru percaya agar mengalami perjumpaan dengan Kristus, memperoleh keselamatan, pemulihan, kuasa serta perubahan hidup. sehingga setiap orang yang percaya dapat terlibat melayani Tuhan dan menjadi pemurid bagi orang percaya baru lainnya.</p><p>LTC Champions diadakan sebanyak 9 kali pertemuan dalam kurun waktu 2,5 bulan.<br>dengan jumlah total 8 kali pertemuan berbentuk kelas pembinaan dan 1 kali Champions Gathering (dilaksanakan dengan menginap 2 hari 1 malam atau non menginap)</p><p>Syarat untuk mengikuti:<br>Terbuka bagi umum dan dapat menyertakan No telp yang bisa dihubungi.</p><p>Contact person: Marcel / 08989033563</p>",
+    "link": 
+    {
+        "title": "LTC Team Builders",
+        "description": "Perjalanan spiritual yang terdiri dari kelas-kelas pengajaran yang akan membantu setiap kita untuk mengenal dan mengalami Kristus melalui proses pemuridan", 
+        "color": "#7ffc03"
+    },
+    "socials":
+    {
+        "facebook": "https://www.facebook.com/abbalovebarat",
+        "instagram": "https://www.instagram.com/abbalovebarat/?hl=id",
+        "youtube": "https://www.youtube.com/watch?v=MNJMQjtuv24&feature=youtu.be"
+    },
+    "group":"GROW",
+	"resources": [
+        { 
+			"title": "title", 
+			"description": "description" 
+		}
+    ]
+}

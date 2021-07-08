@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "0b685c0a-ed75-4bbb-8200-a2279e8158b5",
+		"name": "rare-api-v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload files",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": [
+								"/C:/Users/Polly/Desktop/assets/123.jpg",
+								"/C:/Users/Polly/Desktop/assets/numbers.jpg"
+							]
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": [
+								"/C:/Users/Polly/Desktop/assets/strong-builder-01.jpg",
+								"/C:/Users/Polly/Desktop/assets/strong-builder-02.jpg",
+								"/C:/Users/Polly/Desktop/assets/strong-builder-03.jpg",
+								"/C:/Users/Polly/Desktop/assets/strong-builder-04.jpg"
+							]
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/upload/devotions",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"upload",
+						"devotions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/files/devotions/photo-5dec20c1-b6a0-11ea-bfa6-a9cc89fc45a8.jpeg",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"files",
+						"devotions",
+						"photo-5dec20c1-b6a0-11ea-bfa6-a9cc89fc45a8.jpeg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"LTC Champions\",\n\t\"title_img\": \"LTC Champions\",\n\t\"galleries\": [\n\t\t\"LTC Champions\",\n\t\t\"LTC Champions\"\n\t],\n    \"short_description\": \"<p>Kami mempercayai bahwa setiap orang harus melalui perjalanan rohani untuk bertumbuh menjadi semakin serupa dengan Kristus. <strong>Life Transformation Center</strong> adalah tempat dimana tiap-tiap orang mengalami perjumpaan dengan kebenaran Firman Tuhan yang mengubahkan hidup. LTC Champions adalah awal perjalanan dimana setiap orang dituntun dan diajarkan tentang prinsip-prinsip untuk menjadi seorang PEMENANG.</p>\",\n    \"description\": \"<p>LTC Champions merupakan pembinaan rohani dasar untuk menjangkau dan memperlengkapi orang-orang yang belum atau baru percaya agar mengalami perjumpaan dengan Kristus, memperoleh keselamatan, pemulihan, kuasa serta perubahan hidup. sehingga setiap orang yang percaya dapat terlibat melayani Tuhan dan menjadi pemurid bagi orang percaya baru lainnya.</p><p>LTC Champions diadakan sebanyak 9 kali pertemuan dalam kurun waktu 2,5 bulan.<br>dengan jumlah total 8 kali pertemuan berbentuk kelas pembinaan dan 1 kali Champions Gathering (dilaksanakan dengan menginap 2 hari 1 malam atau non menginap)</p><p>Syarat untuk mengikuti:<br>Terbuka bagi umum dan dapat menyertakan No telp yang bisa dihubungi.</p><p>Contact person: Marcel / 08989033563</p>\",\n    \"group\":\"GROW\",\n\t\"link\": \n    {\n        \"title\": \"LTC Team Builders\",\n        \"description\": \"Perjalanan spiritual yang terdiri dari kelas-kelas pengajaran yang akan membantu setiap kita untuk mengenal dan mengalami Kristus melalui proses pemuridan\", \n        \"color\": \"#7ffc03\"\n    },\n    \"socials\":\n    {\n        \"facebook\": \"https://www.facebook.com/abbalovebarat\",\n        \"instagram\": \"https://www.instagram.com/abbalovebarat/?hl=id\",\n        \"youtube\": \"https://www.youtube.com/watch?v=MNJMQjtuv24&feature=youtu.be\"\n    },\n\t\"resources\": [\n        { \n\t\t\t\"title\": \"title\", \n\t\t\t\"description\": \"description\" \n\t\t}\n    ],\n\t\"resources_thumbnail\": [\n\t\t\"LTC Champions\",\n\t\t\"LTC Champions\"\n\t],\n\t\"resources_file\": [\n\t\t\"LTC Champions\",\n\t\t\"LTC Champions\"\n\t]\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [GET] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [GET:ID] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/5ef4446ab9e2003ad8e297cf",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						"5ef4446ab9e2003ad8e297cf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"LTC Champions 2\",\n\t\"title_img\": \"LTC Champions 2\",\n\t\"galleries\": [\n\t\t\"LTC Champions 1\",\n\t\t\"LTC Champions 2\",\n\t\t\"LTC Champions 3\",\n\t],\n    \"short_description\": \"<p>Kami mempercayai bahwa setiap orang harus melalui perjalanan rohani untuk bertumbuh menjadi semakin serupa dengan Kristus. <strong>Life Transformation Center</strong> adalah tempat dimana tiap-tiap orang mengalami perjumpaan dengan kebenaran Firman Tuhan yang mengubahkan hidup. LTC Champions adalah awal perjalanan dimana setiap orang dituntun dan diajarkan tentang prinsip-prinsip untuk menjadi seorang PEMENANG.</p>\",\n    \"description\": \"<p>LTC Champions merupakan pembinaan rohani dasar untuk menjangkau dan memperlengkapi orang-orang yang belum atau baru percaya agar mengalami perjumpaan dengan Kristus, memperoleh keselamatan, pemulihan, kuasa serta perubahan hidup. sehingga setiap orang yang percaya dapat terlibat melayani Tuhan dan menjadi pemurid bagi orang percaya baru lainnya.</p><p>LTC Champions diadakan sebanyak 9 kali pertemuan dalam kurun waktu 2,5 bulan.<br>dengan jumlah total 8 kali pertemuan berbentuk kelas pembinaan dan 1 kali Champions Gathering (dilaksanakan dengan menginap 2 hari 1 malam atau non menginap)</p><p>Syarat untuk mengikuti:<br>Terbuka bagi umum dan dapat menyertakan No telp yang bisa dihubungi.</p><p>Contact person: Marcel / 08989033563</p>\",\n    \"group\":\"GROW\",\n\t\"link\": \n    {\n        \"title\": \"LTC Team Builders\",\n        \"description\": \"Perjalanan spiritual yang terdiri dari kelas-kelas pengajaran yang akan membantu setiap kita untuk mengenal dan mengalami Kristus melalui proses pemuridan\", \n        \"color\": \"#7ffc03\"\n    },\n    \"socials\":\n    {\n        \"facebook\": \"https://www.facebook.com/abbalovebarat\",\n        \"instagram\": \"https://www.instagram.com/abbalovebarat/?hl=id\",\n        \"youtube\": \"https://www.youtube.com/watch?v=MNJMQjtuv24&feature=youtu.be\"\n    },\n\t\"resources\": [\n        { \n\t\t\t\"title\": \"title\", \n\t\t\t\"description\": \"description\" \n\t\t}\n    ],\n\t\"resources_thumbnail\": [\n\t\t\"LTC Champions\",\n\t\t\"LTC Champions\"\n\t],\n\t\"resources_file\": [\n\t\t\"LTC Champions\",\n\t\t\"LTC Champions\"\n\t]\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/5ef426c8453bb02c783536da",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						"5ef426c8453bb02c783536da"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/5ef4446ab9e2003ad8e297cf",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						"5ef4446ab9e2003ad8e297cf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"Josua Iwan Wahyudi - MENEMUKAN KEHENDAK-NYA DALAM KRISIS\",\n\t\"link\": \"https://youtu.be/20MwAryqaxY\",\n\t\"date\": \"2020-05-10\",\n    \"description\": \"Greater love has no one than this: to lay down one’s life for one’s friends. -John 15:13\",\n\t\"link_text\" : \"WATCH NOW\"\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [GET] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [GET:ID] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/5ef4466db41a773f5033e5b5",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						"5ef4466db41a773f5033e5b5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/5ef4489debff603fccdff014",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						"5ef4489debff603fccdff014"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

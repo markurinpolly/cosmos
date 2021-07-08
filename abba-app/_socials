@@ -1,0 +1,15 @@
+{
+    "module": "connects",
+    "socials": [
+        {
+            "type": "FACEBOOK",
+            "name": "Darwin Liang",
+            "link": "Facebook/darwinliang"
+        },
+        {
+            "type": "INSTAGRAM",
+            "name": "Seno Widjaya",
+            "link": "Facebook/senowijaya"
+        }
+    ]
+}

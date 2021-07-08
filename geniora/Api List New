@@ -1,0 +1,43 @@
+
+
+Login
+http://58.65.241.124:8080/Administrator/Api/Login?user=admin&pass=21232f297a57a5a743894a0e4a801fc3
+
+
+Course (OK)
+- Browse
+http://localhost:8080/geniora-api/content/get/course/browse/0
+
+-Detail
+http://localhost:8080/geniora-api/content/get/course/83
+
+Audio (Not Tested)
+http://localhost:8080/geniora-api/content/get/audio/1
+
+
+
+Audio Book (Not Tested)
+http://localhost:8080/geniora-api/content/get/audiobook/1
+
+
+
+Book (OK)
+http://localhost:8080/geniora-api/content/get/book/163
+
+
+
+Bank Soal (OK)
+http://localhost:8080/geniora-api/content/get/bankquiz/13
+
+
+
+Quiz  (OK)
+http://localhost:8080/geniora-api/content/get/quiz/159
+
+
+
+Video (OK)
+http://localhost:8080/geniora-api/content/get/video/31
+
+
+

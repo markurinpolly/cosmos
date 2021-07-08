@@ -1,0 +1,1491 @@
+{
+	"info": {
+		"_postman_id": "34b28438-4823-4499-ba7a-34e452352a5c",
+		"name": "rare-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2e8a4401-42ea-41ab-9856-3e4f83b75bdb",
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.environment.set(\"token\", response.data.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin@abbalove.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "7f9c36169026788a04d0e227940acd43",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/authentication",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_prefix}}/api",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"name\": \"GREENVILLE MAIZONETTE\",\n    \"address\": \"Greenville Maizonette FC-10 Jakarta Barat 11510\", \n    \"longitude\": \"-6.169925\", \n    \"latitude\": \"106.779282\", \n    \"phones\": [\"021-5656634\", \"021-5656635\"],\n    \"services\": [\n        {\n        \t\"name\": \"Lt. 4\", \n        \t\"schedule\": \n        \t[\n        \t\t{\"name\": \"Ibadah 1 Umum : 08.30 \"}, \n        \t\t{\"name\": \"Ibadah 2 Umum : 10.30 (disertai gereja anak)\"}, \n        \t\t{\"name\": \"Ibadah 3 (Mahasiswa & Profesional Muda – A2G) : 13.00\"}\n        \t]\n    \t},\n        {\t\"name\": \"Lt. 3\", \n        \t\"schedule\": \n        \t[\n        \t\t{\"name\": \"Gereja Anak Kega : 08.30\"},\n        \t\t{\"name\": \"Gereja Anak Kega : 10.30\"}\n        \t]\n    \t},\n        {\t\"name\": \"Lt. 2\", \n        \t\"schedule\": \n        \t[\n        \t\t{\"name\": \"Ibadah Youth – A2G : 08.30\"}\n        \t]\n    \t}\n    ]\n}",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/abbalobe-maizonette.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/locations/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location [GET] [Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/locations",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location [GET:ID][Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/locations/5ecbc7ff6a6a11430c2b23c4",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						"5ecbc7ff6a6a11430c2b23c4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"name\": \"BELLEZZA SHOPPING ARCADE\",\n    \"address\": \"Jl. Letjen Supeno, Arteri Permata Hijau (seberang ITC Permata Hijau)\", \n    \"longitude\": \"-6.169925\", \n    \"latitude\": \"106.779282\", \n    \"phones\": [\"0818 0734 6707\"],\n    \"services\": [\n        {\n        \t\"name\": \"Lt. 3\", \n        \t\"schedule\": \n        \t[\n        \t\t{\"name\": \"Ibadah 1 Umum : 08.30 \"}, \n        \t\t{\"name\": \"Gereja Anak Kega : 08.30\"},\n\t\t\t\t{\"name\": \"Ibadah 2 Umum : 10.30 \"},\t\t\t\t\n        \t\t{\"name\": \"Gereja Anak Kega : 10.30\"},\n\t\t\t\t{\"name\": \"Ibadah 3 Umum : 13.00\"},\t\t\t\t\n        \t\t{\"name\": \"Gereja Anak Kega : 13.00\"}\n        \t]\n    \t},\n        {\t\"name\": \"Lt. 2\", \n        \t\"schedule\": \n        \t[\n        \t\t{\"name\": \"YouthA2G Bellezza : 09.00\"}\n        \t]\n    \t}\n    ]\n}",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/belleza.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/locations/5ecf745b0a9c810810eb2882",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						"5ecf745b0a9c810810eb2882"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/locations/5ecf74e70a9c810810eb288c",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						"5ecf74e70a9c810810eb288c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/locations/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"locations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feeds [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n   \"title\": \"Takaran yang Baik \",\n   \"short_description\": \"Berilah dan kamu akan diberi. —Lukas 6:38\",\n   \"creator_name\": \"Remi Oyedele\",\n   \"content\": \"Pada suatu hari di pompa bensin, Staci bertemu dengan seorang wanita yang lupa membawa kartu debitnya. Karena kehabisan bensin dan terdampar di sana dengan anaknya yang masih bayi, wanita itu meminta bantuan kepada orang-orang yang lewat. Meski saat itu Staci masih belum mendapatkan pekerjaan, ia rela membantu orang asing itu dengan membayari bensin seharga $15. Beberapa hari kemudian, ketika pulang, Staci menemukan sekeranjang hadiah berisi mainan anak dan hadiah-hadiah lain untuknya di depan pintu rumah. Rupanya, teman-teman dari wanita asing yang tidak dikenalnya itu berinisiatif membalas kebaikan Staci dengan mengganti $15 tadi menjadi hadiah Natal yang berkesan bagi Staci sekeluarga. Kisah yang mengharukan tersebut menggambarkan maksud Yesus ketika Dia berkata, “Berilah dan kamu akan diberi: suatu takaran yang baik, yang dipadatkan, yang digoncang dan yang tumpah ke luar akan dicurahkan ke dalam ribaanmu. Sebab ukuran yang kamu pakai untuk mengukur, akan diukurkan kepadamu” (Luk. 6:38). Mendengar itu, kita mungkin tergoda untuk berfokus hanya pada balasan yang akan kita dapatkan bila kita berbagi. Namun, kita akan salah arah apabila itu yang kita pikirkan. Yesus mengawali pernyataan tadi dengan berkata: “Kasihilah musuhmu dan berbuatlah baik kepada mereka dan pinjamkan dengan tidak mengharapkan balasan, maka upahmu akan besar dan kamu akan menjadi anak-anak Allah Yang Mahatinggi, sebab Ia baik terhadap orang-orang yang tidak tahu berterima kasih dan terhadap orang-orang jahat” (ay.35). Tujuan kita memberi bukanlah untuk mendapatkan sesuatu kembali; kita memberi karena Allah senang dengan kemurahan hati kita. Kasih kita kepada sesama mencerminkan hati-Nya yang penuh kasih terhadap kita.\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/feeds-img2.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/feeds/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"feeds",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feeds [GET] [Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/feeds",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"feeds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feeds [GET:ID][Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/feeds/5ecf76929f8350136035c16f",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"feeds",
+						"5ecf76929f8350136035c16f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feeds [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n   \"title\": \"Good Measure\",\n   \"short_description\": \"Give, and it will be given to you. -Luke 6:38\",\n   \"creator_name\": \"Remi Oyedele\",\n   \"content\": \"At a gas station one day, Staci encountered a woman who had left home without her bank card. Stranded with her baby, she was asking passersby for help. Although unemployed at the time, Staci spent $15 to put gas in the stranger’s tank. Days later, Staci came home to find a gift basket of children’s toys and other presents waiting on her porch. Friends of the stranger had reciprocated Staci’s kindness and converted her $15 blessing into a memorable Christmas for her family. This heartwarming story illustrates the point Jesus made when he said, “Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you” (Luke 6:38). It can be tempting to hear this and focus on what we get out of giving, but doing so would miss the point. Jesus preceded that statement with this one: “Love your enemies, do good to them, and lend to them without expecting to get anything back. Then your reward will be great, and you will be children of the Most High, because he is kind to the ungrateful and wicked” (v. 35). We don’t give to get things; we give because God delights in our generosity. Our love for others reflects His loving heart toward us.\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/feeds-img2.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/feeds/5ecf8f977d84be084305fce7",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"feeds",
+						"5ecf8f977d84be084305fce7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feeds [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/feeds/5ecf76939f8350136035c172",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"feeds",
+						"5ecf76939f8350136035c172"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feeds [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/feeds/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"feeds",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"24 Mei 2020 | Arman Harijanto - MENERIMA KETUPAT, \\\"KEBAIKAN TUHAN BERLIPAT-LIPAT\\\"\",\n    \"short_description\": \"Greater love has no one than this: to lay down one’s life for one’s friends. -John 15:13\",\n    \"url\": \"https://youtu.be/Z9xtSEIleIo\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/feeds-img1.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/sermons/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sermons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [GET] [Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/sermons",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sermons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [GET:ID][Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/sermons/5ecf3c3710deae4748acb077",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sermons",
+						"5ecf3c3710deae4748acb077"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"17 Mei 2020 | Bambang Sutedja - HOW DEEP IS YOUR LOVE\",\n    \"short_description\": \"Greater love has no one than this: to lay down one’s life for one’s friends. -John 15:13\",\n    \"url\": \"https://youtu.be/nmKvxBMh2SE\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/feeds-img1.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/sermons/5ecf3c3710deae4748acb077",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sermons",
+						"5ecf3c3710deae4748acb077"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/sermons/5ecf925a7d84be084305fd03",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sermons",
+						"5ecf925a7d84be084305fd03"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/sermons/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sermons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ebooks [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"Strong builders part 4\",\n    \"short_description\": \"Until Done\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/strong-builder-04.jpg"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/1 - HOME.pdf"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/ebooks/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ebooks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ebooks [GET] [Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/ebooks",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ebooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ebooks [GET:ID][Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/ebooks/5ecf78be09022a02bcc3ba1a",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ebooks",
+						"5ecf78be09022a02bcc3ba1a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ebooks [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"Strong builders part 2\",\n    \"short_description\": \"With Love\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/strong-builder-01.jpg"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/1 - HOME.pdf"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/ebooks/5ecf78b209022a02bcc3ba12",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ebooks",
+						"5ecf78b209022a02bcc3ba12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ebooks [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/ebooks/5ecf78be09022a02bcc3ba1a",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ebooks",
+						"5ecf78be09022a02bcc3ba1a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ebooks [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/ebooks/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ebooks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"date\": \"23-05-2020\",\n    \"title\": \"Ruth at the Threshing Floor\",\n\t\"verse\": \"Ruth 3 : 1 - 2\",\n\t\"verse_description\": \"2 Boaz is a close relative of ours, and he’s been very kind by letting you gather grain with his young women. Tonight he will be winnowing barley at the threshing floor. 3 Now do as I tell you—take a bath and put on perfume and dress in your nicest clothes. Then go to the threshing floor, but don’t let Boaz see you until he has finished eating and drinking. 4 Be sure to notice where he lies down; then go and uncover his feet and lie down there. He will tell you what to do.”\",\n\t\"content\": \"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Where does it come from?Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \\\"de Finibus Bonorum et Malorum\\\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \\\"Lorem ipsum dolor sit amet..\\\", comes from a line in section 1.10.32.\"\n}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/devotions/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"devotions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [GET] [Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/devotions",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"devotions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [GET:ID][Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/devotions/5ecf7ae9d1638c4410eabf4e",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"devotions",
+						"5ecf7ae9d1638c4410eabf4e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"date\": \"25-05-2020\",\n    \"title\": \"The Israelites in Egypt\",\n\t\"verse\": \"Exodus 1 : 1 - 3\",\n\t\"verse_description\": \"1 These are the names of the sons of Israel (that is, Jacob) who moved to Egypt with their father, each with his family: 2 Reuben, Simeon, Levi, Judah, 3Issachar, Zebulun, Benjamin, 4 Dan, Naphtali, Gad, and Asher. 5 In all, Jacob had seventy descendants in Egypt, including Joseph, who was already there.\",\n\t\"content\": \"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Where does it come from?Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \\\"de Finibus Bonorum et Malorum\\\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \\\"Lorem ipsum dolor sit amet..\\\", comes from a line in section 1.10.32.\"\n}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/devotions/5ecf7ae9d1638c4410eabf4e",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"devotions",
+						"5ecf7ae9d1638c4410eabf4e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devtions [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/devotions/5ecf7ae9d1638c4410eabf4e",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"devotions",
+						"5ecf7ae9d1638c4410eabf4e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/devotions/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"devotions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"Strong builders part 1\",\n    \"short_description\": \"Build from Basic\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/placeholder.png"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/events/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events [GET] [Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/events",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events [GET:ID][Backend, Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/events/5ecf3dd6d4abdd3f14dce699",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events",
+						"5ecf3dd6d4abdd3f14dce699"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"Strong builders part 2\",\n    \"short_description\": \"Build from Basic\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/assets/loren-ipsum-11.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/events/5ecf3dd6d4abdd3f14dce699",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events",
+						"5ecf3dd6d4abdd3f14dce699"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/events/5ecf3dd6d4abdd3f14dce699",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events",
+						"5ecf3dd6d4abdd3f14dce699"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Events [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/events/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resources [GET] [Frontend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/resources",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"resources"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

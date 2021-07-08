@@ -1,0 +1,51 @@
+{
+    "title": "Abbakids",
+    "title_img": "/discovers/files-c3ef6b80-c5bd-11ea-98d5-7313800a284a.png",
+    "galleries": [
+        "/discovers/galleries-55f63d60-b619-11ea-8f72-0d69b9ba84d1.jpeg",
+        "/discovers/galleries-55f66470-b619-11ea-8f72-0d69b9ba84d1.jpeg",
+        "/discovers/galleries-55f68b80-b619-11ea-8f72-0d69b9ba84d1.jpeg",
+        "/discovers/galleries-55f6d9a0-b619-11ea-8f72-0d69b9ba84d1.jpeg",
+        "/discovers/galleries-55f700b0-b619-11ea-8f72-0d69b9ba84d1.jpeg",
+        "/discovers/galleries-55f727c0-b619-11ea-8f72-0d69b9ba84d1.jpeg"
+    ],
+    "short_description": "<p>Seperti anak-anak panah di tangan pahlawan, demikianlah anak-anak pada masa muda. &ndash; Mazmur 127:4 . Kami percaya bahwa anak-anak perlu diajar sejak dini untuk menjadi Murid Kristus sehingga dalam pertumbuhannya mereka akan menjadi garam dan terang disetiap aspek kehidupan.</p>",
+    "_id": "5ef34c2c875d4e4ab82fa944",
+    "description": "<p>Sebagai gereja anak yang berpusatkan kepada Kristus maka di Abbakids setiap anak akan dibina, diperlengkapi dan dipersiapkan untuk menjadi murid Kristus yang mengenal panggilan mereka dan siap diutus.</p>\n<p>Ibadah Abbakids dilaksanakan setiap Minggu bersamaan dengan Ibadah Umum. Selain itu Abbakids akan melakukan camp setiap 1x/tahun sebagai bagian dari <em>spiritual journey</em> dari masing-masing anak.</p>\n<p><strong>Contact : </strong><br /><strong>Maizonette: 0816-1643-180 (Herry Husada)</strong><br /><strong>Bellezza: 0817-188-488 (Adrian Nugraha)</strong></p>",
+    "link": {
+        "title": "Abbakids Resources",
+        "description": "Abbakids resources description",
+        "color": "#000000",
+        "_id": "5f0d8a852ab83349842dbefa"
+    },
+    "socials_v2": [
+        {
+            "type": "FACEBOOK",
+            "name": "Darwin Liang",
+            "link": "Facebook/darwinliang"
+        },
+        {
+            "type": "INSTAGRAM",
+            "name": "Seno Widjaya",
+            "link": "Facebook/senowijaya"
+        }
+    ],
+    "group": "NEXTGEN",
+    "resources": [
+        {
+            "title": "title 1", 
+			"description": "descripition 1",
+            "resources_thumbnail": "resources_thumbnail 1",
+            "resources_file": "resources_file 1"
+        },
+        {
+            "title": "title 2", 
+			"description": "descripition 2",
+            "resources_thumbnail": "resources_thumbnail 2",
+            "resources_file": "resources_file 2"
+        }
+    ],
+    "created_date": "2020-06-24T12:50:52.104Z",
+    "updated_date": "2020-07-14T10:35:49.863Z",
+    "__v": 0
+}

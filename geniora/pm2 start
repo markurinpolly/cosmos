@@ -1,0 +1,16 @@
+GenioraApi Node with pm2
+
+pm2 start /usr/share/node/genioraapi/app.js --name server-81 -- --name genioravideoapi --port 8081
+
+pm2 start /usr/share/node/genioraku-api/server.js --name genioraku-api-85 -- --name geniorakuapi85 --port 8085
+
+pm2 start app.js --name server -- --name genioravideoapi --port 8080
+
+pm2 logs
+
+pm2 flush
+
+
+pm2 start /usr/share/node/geniorapayment/app.js --name server-70 -- --name geniorapayment --port 8070
+
+pm2 start /home/polly/abba-server/server.js --name server-3003 -- --name api-server 3003 --port 3003

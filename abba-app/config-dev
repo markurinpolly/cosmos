@@ -1,0 +1,23 @@
+{
+  "APP_NAME": "api",
+  "mongodb": {
+    "_CON_PRO": "mongodb://weigang:12345678@147.139.132.199:2717/abbalove?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false"
+  },
+  "X_API_KEY": "81b8df3e8aaa597f7b77d565ad713b3d",
+  "jwt_sign_options": {
+    "expiresIn": "24h",
+    "algorithm": "RS256"
+  },
+  "jwt_verify_options": {
+    "expiresIn": "24h",
+    "algorithm": ["RS256"]
+  },
+  "onesignal": {
+    "url": "https://onesignal.com:443/api/v1/notifications",
+    "appId": "a55fdf62-1707-4078-870b-8931b3f38773",
+    "apiKey": "YTgwMTczODktODkzYy00YTE1LTk3ZGUtZWFkNWRhNjZmMjNj"
+  },
+  "_FILE_DIRECTORY": "D:/web-attachment/files",
+  "_PATH_TO_DOWNLOAD": "localhost:3000/api/v1/files",
+  "_LOGGING": true
+}

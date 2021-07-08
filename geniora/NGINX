@@ -1,0 +1,32 @@
+NGINX
+
+yum install -y epel-release
+
+yum install -y nginx
+
+systemctl start nginx
+
+systemctl status nginx
+(active running)
+
+-- Check Browser port:80
+
+systemctl enable nginx (Start NGINX whenever server start)
+
+WHERE:
+/etc/nginx/nginx.conf (general configuration)
+
+mkdir /etc/nginx/conf.d (included configuration)
+/etc/nginx/conf.d/*.conf (we can create config file here)
+
+nginx -t (Text configuration)
+
+systemctl restart nginx (Restart nginx)
+
+systemctl reload nginx (Restart nginx)
+
+netstat tln
+
+// unlock http connection
+setsebool httpd_can_network_connect on -P
+

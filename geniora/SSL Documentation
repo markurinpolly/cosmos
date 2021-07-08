@@ -1,0 +1,86 @@
+learn.geniora.com   :: 58.65.241.123
+folder              :: /usr/share/ssl/learn.geniora.com/2021/
+
+HAPROXY
+folder              :: /etc/haproxy/haproxy.cfg
+
+STEP-BY-STEP        ::
+
+1.  Create intermediates.pem
+    Rename ca-bundle jadi .pem File    
+
+2.  Create Intermediate Certificate
+    cat certificate.crt intermediates.pem private.key > learn.geniora.com.pem
+    cat learn_geniora_com.crt SectigoRSADomainValidationSecureServerCA.crt private.key > learn.geniora.com.pem [2021] -- Tidak Perlu Rename
+    cat learn_geniora_com.crt SectigoRSADomainValidationSecureServerCA.crt > learn.geniora.com.pem [2021] -- Tidak Perlu Rename
+
+Description         ::
+
+Intermediate Certificate
+cat certificate.crt intermediates.pem private.key > ssl-certs.pem
+
+certificate.crt		: Dari yang diemail provider CA
+intermediates.pem	: Rename ca-bundle jadi .pem File
+private.key			: Request ke pak Chandra
+
+Example in Configuration
+
+#---------------------------------------------------------------------
+# main frontend which proxys to the backends
+#---------------------------------------------------------------------
+frontend  58.65.241.124
+        bind *:80
+    bind *:443 ssl crt /usr/share/ssl/learn.geniora.com/learn.geniora.com.pem
+        #http-request redirect scheme https unless { ssl_fc }
+
+    acl url_static       path_beg       -i /static /images /javascript /stylesheets
+    acl url_static       path_end       -i .jpg .gif .png .css .js
+
+        acl url_index            path           -i /
+        acl url_payment      path_beg       -i /geniora-payment/
+        acl url_api              path_beg       -i /geniora-api/
+
+        use_backend app                         if url_index
+    use_backend app             if url_static
+        use_backend app                         if url_payment
+        use_backend app                         if url_api
+
+
+-----------------------------------------------------------------------------------------------
+learn.geniora.com   :: 58.65.241.124
+folder              :: /usr/share/ssl/web.geniora.com/2021/
+
+NGINX
+folder              :: /etc/nginx
+
+cat web_geniora_com.crt web_geniora_com.ca-bundle.pem > web_geniora_com_chained.crt
+
+Example in Configuration
+
+server {
+    listen       8443 ssl default_server;
+    listen       [::]:8443 ssl default_server;
+    ssl_certificate     /usr/share/ssl/web.geniora.com/2021/ssl-certs.pem;
+    ssl_certificate_key /usr/share/ssl/web.geniora.com/web.geniora.com.key;
+    server_name  https://58.65.241.124:8443;
+
+    # root           /usr/share/nginx/html;          
+    
+    root                    /usr/share;
+
+    # Load configuration files for the default server block.
+    include /etc/nginx/default.d/*.conf;
+
+    location /web-attachment/ {
+
+    }
+
+    error_page 404 /404.html;
+        location = /40x.html {
+    }
+
+    error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+    }
+}
+

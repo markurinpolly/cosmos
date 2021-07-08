@@ -1,0 +1,20 @@
+{
+	"link_text" : "WATCH NOW",
+	"short_description" : "For starters, lorem ipsum isn’t just some wacky text-thingy with no meaning whatsoever. These words have been derived from the Latin phrase ‘dolorem ipsum’ which translates to ‘pain itself’. Lorem Ipsum is a placeholder text used to illustrate graphic features by publishers and graphic designers",
+	"type" : "SERMON",
+	"menu" : "HOME"
+}
+
+{
+	"link_text" : "READ NOW",
+	"short_description" : "For starters, lorem ipsum isn’t just some wacky text-thingy with no meaning whatsoever. These words have been derived from the Latin phrase ‘dolorem ipsum’ which translates to ‘pain itself’. Lorem Ipsum is a placeholder text used to illustrate graphic features by publishers and graphic designers",
+	"type" : "DEVOTION",
+	"menu" : "HOME"
+}
+
+{
+	"link_text" : "READ NOW",
+	"short_description" : "For starters, lorem ipsum isn’t just some wacky text-thingy with no meaning whatsoever. These words have been derived from the Latin phrase ‘dolorem ipsum’ which translates to ‘pain itself’. Lorem Ipsum is a placeholder text used to illustrate graphic features by publishers and graphic designers",
+	"type" : "DOWNLOAD",
+	"menu" : "HOME"
+}

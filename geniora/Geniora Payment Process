@@ -1,0 +1,86 @@
+Geniora Payment Process [ESPAY]
+
+1. [Geniora Mobile] Choose product to buy  
+2. [Geniora Mobile] Process Check Out Order (DONE)
+	> geniora-payment/order
+		param 	: 	username
+					productid
+		method	:	POST
+		return 	:	orderid
+		process	:	1. Insert t_order (order_id, createdby, createddate, status, iscanceled)
+					2. Insert d_order (order_id, no, productid, qty, price)
+					
+3. [Geniora Mobile] Process to Payment (DONE)
+	> Redirect to geniora-payment/espay/:orderid
+	ex: http://58.65.241.124/geniora-payment/espay/?doc=00001/ORD/06/01/2020
+	
+4. [Geniora API] Inquiry (DONE)
+	Goal 	: 	Informasi ke ESPAY mengenai detail/rincian pembayaran(order_id, amount, ccy, description)
+	ESPAY -> Geniora
+	POST
+	1. Insert to t_inquiry (docno(order_id), createddate, rq_uuid, rq_datetime rq_signature, response, rq_all(json all data from espay))
+	2. Update t_order status = "INQUIRY"
+	
+5. [Geniora API] Payment Notification (DONE)
+	Goal 	: 	Ketika pelanggan telah selesai melakukan pembayaran, sistem Espay memberitahukan sistem penjual 
+				secara langsung mengenai status pembayaran dari transaksi yang sedang diproses.
+	ESPAY -> Geniora
+	POST
+	1. Insert to t_payment (docno(order_id), createddate, rq_uuid, rq_datetime rq_signature, response, rq_all(json all data from espay)
+	2. 2. Update t_order status = "PAYED"
+	
+6. [Geniora Mobile] Check Payment Status (DONE)
+	> geniora-payment/order/check'
+		param 	: 	username
+					orderid
+		method	:	POST
+		return 	:	status: [PENDING, FAILED, SUCCESS]
+
+
+____________________________________________________________________________________________________________________________________________
+
+Geniora Payment Process [Bank Transfer Manual Confirmation]
+	
+
+1. [Geniora Mobile] Choose product to buy  
+
+2. [Geniora Mobile] Process Review Pembelian
+	> geniora-payment/order
+		param 	: 	username
+					productid
+		method	:	POST
+		return 	:	orderid
+		process	:	1. Insert t_order (order_id, createdby, createddate, status="OPEN", iscanceled) 
+					2. Insert d_order (order_id, no, productid, qty, price)	
+	
+2. [Geniora Mobile] Process Confirm Payment
+	> geniora-payment/manual-payment/confirm
+		param 	: 	username
+					orderid
+					account_name
+					account_no
+					amount
+		method	:	POST
+		return 	:	status: [FAILED, SUCCESS]
+		process	:	1. Insert d_confirm_order (order_id, account_no, account_name, amount)
+					2. Update t_order status = "PENDING"
+					
+3. [Geniora Mobile] Get Process Confirm Payment
+	> /geniora-payment/manual-payment/confirm
+					
+____________________________________________________________________________________________________________________________________________
+	
+Generate DOCNO/ID (by module)
+1. ORDER	ORD	
+2. INQUIRY	INQ
+3. PAYMENT	PAY
+
+T_DOCNO
+no
+modulecode	: parameter
+day
+month
+year
+print : 00001/ORDER/04/09/2019
+
+

@@ -1,0 +1,974 @@
+{
+	"info": {
+		"_postman_id": "0b685c0a-ed75-4bbb-8200-a2279e8158b5",
+		"name": "rare-api-v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload files",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/Polly/Desktop/document/abba-app-notes/PHOTO/DISCOVER/NextGen/Abbakids/title_image.jpeg"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": [
+								"/C:/Users/Polly/Desktop/assets/strong-builder-01.jpg",
+								"/C:/Users/Polly/Desktop/assets/strong-builder-02.jpg",
+								"/C:/Users/Polly/Desktop/assets/strong-builder-03.jpg",
+								"/C:/Users/Polly/Desktop/assets/strong-builder-04.jpg"
+							],
+							"disabled": true
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/upload/discovers",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"upload",
+						"discovers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v1/files/devotions/photo-5dec20c1-b6a0-11ea-bfa6-a9cc89fc45a8.jpeg",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"files",
+						"devotions",
+						"photo-5dec20c1-b6a0-11ea-bfa6-a9cc89fc45a8.jpeg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"LTC Champions\",\n\t\"title_img\": \"LTC Champions\",\n\t\"galleries\": [\n\t\t\"LTC Champions\",\n\t\t\"LTC Champions\"\n\t],\n    \"short_description\": \"<p>Kami mempercayai bahwa setiap orang harus melalui perjalanan rohani untuk bertumbuh menjadi semakin serupa dengan Kristus. <strong>Life Transformation Center</strong> adalah tempat dimana tiap-tiap orang mengalami perjumpaan dengan kebenaran Firman Tuhan yang mengubahkan hidup. LTC Champions adalah awal perjalanan dimana setiap orang dituntun dan diajarkan tentang prinsip-prinsip untuk menjadi seorang PEMENANG.</p>\",\n    \"description\": \"<p>LTC Champions merupakan pembinaan rohani dasar untuk menjangkau dan memperlengkapi orang-orang yang belum atau baru percaya agar mengalami perjumpaan dengan Kristus, memperoleh keselamatan, pemulihan, kuasa serta perubahan hidup. sehingga setiap orang yang percaya dapat terlibat melayani Tuhan dan menjadi pemurid bagi orang percaya baru lainnya.</p><p>LTC Champions diadakan sebanyak 9 kali pertemuan dalam kurun waktu 2,5 bulan.<br>dengan jumlah total 8 kali pertemuan berbentuk kelas pembinaan dan 1 kali Champions Gathering (dilaksanakan dengan menginap 2 hari 1 malam atau non menginap)</p><p>Syarat untuk mengikuti:<br>Terbuka bagi umum dan dapat menyertakan No telp yang bisa dihubungi.</p><p>Contact person: Marcel / 08989033563</p>\",\n    \"group\":\"GROW\",\n\t\"link\": \n    {\n        \"title\": \"LTC Team Builders\",\n        \"description\": \"Perjalanan spiritual yang terdiri dari kelas-kelas pengajaran yang akan membantu setiap kita untuk mengenal dan mengalami Kristus melalui proses pemuridan\", \n        \"color\": \"#7ffc03\"\n    },\n    \"socials\":\n    {\n        \"facebook\": \"https://www.facebook.com/abbalovebarat\",\n        \"instagram\": \"https://www.instagram.com/abbalovebarat/?hl=id\",\n        \"youtube\": \"https://www.youtube.com/watch?v=MNJMQjtuv24&feature=youtu.be\"\n    },\n\t\"resources\": [\n        { \n\t\t\t\"title\": \"title\", \n\t\t\t\"description\": \"description\" \n\t\t}\n    ],\n\t\"resources_thumbnail\": [\n\t\t\"LTC Champions\",\n\t\t\"LTC Champions\"\n\t],\n\t\"resources_file\": [\n\t\t\"LTC Champions\",\n\t\t\"LTC Champions\"\n\t]\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [GET] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [GET:ID] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/5ef4446ab9e2003ad8e297cf",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						"5ef4446ab9e2003ad8e297cf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"Abbakids\",\n    \"galleries\": [\n        \"/discovers/galleries-55f63d60-b619-11ea-8f72-0d69b9ba84d1.jpeg\",\n        \"/discovers/galleries-55f66470-b619-11ea-8f72-0d69b9ba84d1.jpeg\",\n        \"/discovers/galleries-55f68b80-b619-11ea-8f72-0d69b9ba84d1.jpeg\",\n        \"/discovers/galleries-55f6d9a0-b619-11ea-8f72-0d69b9ba84d1.jpeg\",\n        \"/discovers/galleries-55f700b0-b619-11ea-8f72-0d69b9ba84d1.jpeg\",\n        \"/discovers/galleries-55f727c0-b619-11ea-8f72-0d69b9ba84d1.jpeg\"\n    ],\n    \"short_description\": \"<p>Seperti anak-anak panah di tangan pahlawan, demikianlah anak-anak pada masa muda. &ndash; Mazmur 127:4 . Kami percaya bahwa anak-anak perlu diajar sejak dini untuk menjadi Murid Kristus sehingga dalam pertumbuhannya mereka akan menjadi garam dan terang disetiap aspek kehidupan.</p>\",\n    \"resources_thumbnail\": [],\n    \"resources_file\": [],\n    \"title_img\": \"/discovers/files-b6e14200-b6f5-11ea-8bb9-4d4c4416d8b4.jpeg\",\n    \"description\": \"<p>Sebagai gereja anak yang berpusatkan kepada Kristus maka di abbakids setiap anak akan dibina, diperlengkapi dan dipersiapkan untuk menjadi murid Kristus yang mengenal panggilan mereka dan siap diutus.</p>\\n<p>Ibadah Abbakids dilaksanakan setiap minggu bersamaan dengan Ibadah Umum. Selain itu Abbakids akan melakukan camp setiap 1x/tahun sebagai bagian dari Spiritual Journey dari masing-masing anak.</p>\\n<p>Contact : <br />Maizonette: 0816-1643-180 (Herry Husada)<br />Bellezza: 0817-188-488 (Adrian Nugraha)</p>\",\n    \"link\": {\n        \"title\": \"Abbakids Resources\",\n        \"description\": \"Abbakids resources description\",\n        \"color\": \"#000000\",\n        \"_id\": \"5ef4b20a4ab369734a9bac6b\"\n    },\n    \"socials\": {\n        \"facebook\": \"\",\n        \"instagram\": \"\",\n        \"youtube\": \"\",\n        \"_id\": \"5ef4b20a4ab369734a9bac6c\"\n    },\n    \"group\": \"NEXTGEN\",\n    \"resources\": []\n}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/5ef34c2c875d4e4ab82fa944",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						"5ef34c2c875d4e4ab82fa944"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/5ef4446ab9e2003ad8e297cf",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						"5ef4446ab9e2003ad8e297cf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discovers [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/discovers/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"discovers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"The Account of Creation 2020-06-11\",\n\t\"date\": \"2020-06-29\",\n\t\"verse\": \"Genesis 1 : 1 - 2\",\n\t\"reflection\": \"1 In the beginning God created the heavens and the earth. 2 The earth was formless and empty, and darkness covered the\",\n\t\"sharing\": \"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Where does it come from?Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \\\"de Finibus Bonorum et Malorum\\\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \\\"Lorem ipsum dolor sit amet..\\\", comes from a line in section 1.10.32.\"\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/devotions/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"devotions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [GET] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/devotions/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"devotions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [GET:ID] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/devotions/5ee3bc0863e17b0d10077aa7",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"devotions",
+						"5ee3bc0863e17b0d10077aa7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"The Account of Creation 2020-06-11\",\n\t\"date\": \"2020-06-28\",\n\t\"verse\": \"Genesis 1 : 1 - 12\",\n\t\"reflection\": \"1 In the beginning God created the heavens and the earth. 2 The earth was formless and empty, and darkness covered the\",\n\t\"sharing\": \"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Where does it come from?Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \\\"de Finibus Bonorum et Malorum\\\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \\\"Lorem ipsum dolor sit amet..\\\", comes from a line in section 1.10.32.\"\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/devotions/5ef96e95af0cee39588c18ad",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"devotions",
+						"5ef96e95af0cee39588c18ad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/devotions/5ef96e95af0cee39588c18ad",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"devotions",
+						"5ef96e95af0cee39588c18ad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devotions [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/devotions/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"devotions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Onlines [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n\t\"title\": \"Darwin Liang - I SPEAK CAUSE I KNOW 2\",\n\t\"date\": \"2020-06-16\",\n\t\"link\": \"https://youtu.be/rgqfpB1Nmb8\",\t\n\t\"thumbnail\": \"thumbnail\",\t\n\t\"description\": \"<p>Suspendisse potenti. Nulla feugiat dolor blandit semper laoreet. Curabitur vestibulum libero justo, convallis pharetra mi mollis in. <strong>Maecenas vitae elit quis sem efficitur vulputate</strong>. Phasellus malesuada, purus sed pretium hendrerit, lectus nibh vehicula augue, ut dictum tortor diam et magna. Duis massa sapien, rhoncus eget nunc ac, aliquet tempor lectus. Sed malesuada massa non nisi faucibus hendrerit. In ultricies commodo sodales. Suspendisse elementum cursus turpis ac aliquam. Nunc porttitor nec neque ut lobortis. Cras malesuada mi mauris, non porta magna eleifend nec.</p>\"\t\t\n} ",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/onlines/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"onlines",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Onlines [GET] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/onlines/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"onlines",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Onlines [GET:ID] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/onlines/5ef9f1c075b7982584a5a3ef",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"onlines",
+						"5ef9f1c075b7982584a5a3ef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Onlines [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n\t\"title\": \"Josua Iwan Wahyudi - MENEMUKAN KEHENDAK-NYA DALAM KRISIS\",\n\t\"date\": \"2020-05-10\",\n\t\"link\": \"https://youtu.be/rgqfpB1Nmb8\",\n\t\"thumbnail\": \"thumbnail 2\",\t\n\t\"description\": \"<p>Suspendisse potenti. Nulla feugiat dolor blandit semper laoreet. Curabitur vestibulum libero justo, convallis pharetra mi mollis in. <strong>Maecenas vitae elit quis sem efficitur vulputate</strong>. Phasellus malesuada, purus sed pretium hendrerit, lectus nibh vehicula augue, ut dictum tortor diam et magna. Duis massa sapien, rhoncus eget nunc ac, aliquet tempor lectus. Sed malesuada massa non nisi faucibus hendrerit. In ultricies commodo sodales. Suspendisse elementum cursus turpis ac aliquam. Nunc porttitor nec neque ut lobortis. Cras malesuada mi mauris, non porta magna eleifend nec.</p>\"\t\n} ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/onlines/5ef49d098d829f11b0c4a78b",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"onlines",
+						"5ef49d098d829f11b0c4a78b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Onlines [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/onlines/5ef49f428d829f11b0c4a79f",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"onlines",
+						"5ef49f428d829f11b0c4a79f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Onlines [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/onlines",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"onlines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [POST] [Backend]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"Josua Iwan Wahyudi - MENEMUKAN KEHENDAK-NYA DALAM KRISIS\",\n\t\"link\": \"https://youtu.be/20MwAryqaxY\",\n\t\"date\": \"2020-05-10\",\n    \"description\": \"Greater love has no one than this: to lay down one’s life for one’s friends. -John 15:13\",\n\t\"link_text\" : \"WATCH NOW\"\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [GET] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [GET:ID] [Backend]",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/5ef4466db41a773f5033e5b5",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						"5ef4466db41a773f5033e5b5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [PUT:ID] [Backend]",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"Josua Iwan Wahyudi - MENEMUKAN KEHENDAK-NYA DALAM KRISIS 2\",\n\t\"link\": \"https://youtu.be/20MwAryqaxY\",\n\t\"date\": \"2020-05-10\",\n    \"description\": \"Greater love has no one than this: to lay down one’s life for one’s friends. -John 15:13\",\n\t\"link_text\" : \"WATCH NOW\"\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/5ef49e4c8d829f11b0c4a790",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						"5ef49e4c8d829f11b0c4a790"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [DELETE:ID] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/5ef4489debff603fccdff014",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						"5ef4489debff603fccdff014"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sermons [DELETE] [Backend]",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "x-api-token",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/sermons/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sermons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notification [POST]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "x-api-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\n    \"title\": \"Mulai harimu dengan Firman Tuhan.\",\n    \"message\": \"Genesis 1 : 1 - 2\",\n    \"payload\": {\n        \"type\": \"devotion\",\n        \"id\": \"\"\n    }\n}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_prefix}}/api/v2/notification/",
+					"host": [
+						"{{url_prefix}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"notification",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
