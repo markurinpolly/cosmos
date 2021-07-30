@@ -24,12 +24,17 @@ yum install postgresql11-server
 
 /usr/pgsql-11/bin/postgresql-11-setup initdb
 systemctl enable postgresql-11
+systemctl status postgresql-11
+systemctl stop postgresql-11
 systemctl start postgresql-11
+systemctl restart postgresql-11
 
 [Open Port]
 firewall-cmd --add-service=postgresql
 
 firewall-cmd --add-service=postgresql --permanent
+
+sudo -u postgres psql
 
 sudo -i -u postgres
 [Change Password]
@@ -70,3 +75,6 @@ host    all             all             118.136.196.180/32            md5
 sudo systemctl restart postgresql-11
 
 Done!!
+
+export PATH=/usr/pgsql-11/bin:$PATH
+export PSQL_PATH=/usr/pgsql-11/bin/

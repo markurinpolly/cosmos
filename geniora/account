@@ -43,6 +43,11 @@ scp /Users/pollymarkurin/Downloads/promo_imlek/popup_notifikasi_GenioraCNY.png s
 scp -r /Users/pollymarkurin/Downloads/2021 ssh root@58.65.241.123:/usr/share/ssl/learn.geniora.com/
 scp -r /Users/pollymarkurin/Downloads/2021 ssh root@58.65.241.124:/usr/share/ssl/web.geniora.com/
 
+## scp using rsa 
+
+scp -P 185 -i .ssh/id_rsa_vxYat7R348 /Users/pollymarkurin/project/app-version/Geniora-Panel/geniora-panel.war root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
+
 p@ssGeniora:D1kali
 p@ssGeniora:D2kali
 p@ssGeniora:D3kali
