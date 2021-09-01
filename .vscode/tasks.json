@@ -6,14 +6,14 @@
         {
             "label": "prod ssh abba_server",
             "type": "shell",
-            "command": "ssh -p 185 -i /Users/pollymarkurin/project/cosmos/abba-app/id_rsa_polly_vxYat7R348.txt polly@147.139.161.252",
+            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_polly_vxYat7R348.txt polly@147.139.161.252",
             "problemMatcher": [],
             "group": "build"
         },
         {
             "label": "dev ssh abba_server",
             "type": "shell",
-            "command": "ssh -p 185 -i /Users/pollymarkurin/project/cosmos/abba-app/id_rsa_polly_vxYat7R348.txt polly@147.139.132.199",
+            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_polly_vxYat7R348.txt polly@147.139.132.199",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -23,7 +23,7 @@
         {
             "label": "ssh 58.65.241.122 :: root",
             "type": "shell",
-            "command": "ssh -p 185 -i .ssh/id_rsa_vxYat7R348 root@58.65.241.122",
+            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 root@58.65.241.122",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -33,7 +33,7 @@
         {
             "label": "ssh 58.65.241.122 :: pollymarkurin",
             "type": "shell",
-            "command": "ssh -p 185 -i .ssh/id_rsa_vxYat7R348 pollymarkurin@58.65.241.122",
+            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 pollymarkurin@58.65.241.122",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -43,7 +43,7 @@
         {
             "label": "ssh 58.65.241.123 :: root",
             "type": "shell",
-            "command": "ssh -p 185 -i .ssh/id_rsa_vxYat7R348 root@58.65.241.123",
+            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 root@58.65.241.123",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -53,7 +53,7 @@
         {
             "label": "ssh 58.65.241.123 :: pollymarkurin",
             "type": "shell",
-            "command": "ssh -p 185 -i .ssh/id_rsa_vxYat7R348 pollymarkurin@58.65.241.123",
+            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 pollymarkurin@58.65.241.123",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -63,7 +63,7 @@
         {
             "label": "ssh 58.65.241.124 :: root",
             "type": "shell",
-            "command": "ssh -p 185 -i .ssh/id_rsa_vxYat7R348 root@58.65.241.124",
+            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 root@58.65.241.124",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -73,7 +73,7 @@
         {
             "label": "ssh 58.65.241.124 :: pollymarkurin",
             "type": "shell",
-            "command": "ssh -p 185 -i .ssh/id_rsa_vxYat7R348 pollymarkurin@58.65.241.124",
+            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 pollymarkurin@58.65.241.124",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
