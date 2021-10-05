@@ -1,0 +1,41 @@
+GenDB-122 (Centos 7.6.1810)
+vps1
+ssh root@58.65.241.122
+58.65.241.122
+Model Name : Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
+HD : Up To 1TB (2TB for 3 Server)
+CPU : 8 (1 x 8 x 1)
+RAM : 32GB
+user : root
+password : p@ssGeniora:D1kali
+Thread(s) per core : 1
+Core(s) per socket : 8
+Socket(s) : 1
+
+GenHA-123 (Centos 7.6.1810)
+vps2
+58.65.241.123
+Model Name : Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
+HD : 500GB
+HD : Up To 1TB (2TB for 3 Server)
+RAM : 32GB
+user : root
+password : p@ssGeniora:D2kali
+Thread(s) per core : 1
+Core(s) per socket : 8
+Socket(s) : 1
+
+GenApp-124 (Centos 7.6.1810)
+vps3
+58.65.241.124
+ssh root@58.65.241.124  
+Model Name : Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
+HD : 500GB
+HD : Up To 1TB (2TB for 3 Server)
+RAM : 32GB
+user : root
+password : p@ssGeniora:D3kali
+Thread(s) per core : 1
+Core(s) per socket : 8
+Socket(s) : 1
+
