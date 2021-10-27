@@ -1,4 +1,0 @@
-cd /usr/share/web/geniora-dashboard-v4/
-git pull
-npm run build
-sudo cp -r /usr/share/web/geniora-dashboard-v4/build/. /usr/share/web/geniora

@@ -1,0 +1,14 @@
+#1 Geniora Dashboard
+
+cd /usr/share/web/geniora-dashboard-v4/
+git pull
+npm run build
+sudo cp -r /usr/share/web/geniora-dashboard-v4/build/. /usr/share/web/geniora
+
+/usr/share/web/geniora-dashboard-v4/public/
+
+#2 Geniora Panel
+
+scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  
+/Users/pollymarkurin/project/app-version/Geniora-Panel/2021-10-21/geniora-panel.war 
+root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
