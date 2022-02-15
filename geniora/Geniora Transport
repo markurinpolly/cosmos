@@ -10,5 +10,13 @@ sudo cp -r /usr/share/web/geniora-dashboard-v4/build/. /usr/share/web/geniora
 #2 Geniora Panel
 
 scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  
-/Users/pollymarkurin/project/app-version/Geniora-Panel/2021-10-21/geniora-panel.war 
+/Users/pollymarkurin/project/app-version/Geniora-Panel/2021-11-08/geniora-panel.war 
 root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
+#3 Saya Bisa
+
+scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  
+/Users/pollymarkurin/project/app-version/SayaBisa/sayabisa.war 
+root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
+scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  /Users/pollymarkurin/project/app-version/SayaBisa/sayabisa.war root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/

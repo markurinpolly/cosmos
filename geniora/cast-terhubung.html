@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script src="https://www.geniora.com/wp-includes/js/qr_code/qrcode.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+<style>
+  .et_pb_row {
+      max-width: 1100px;
+  }
+  .modal-backdrop.show {
+    opacity: .8 !important;
+	}
+  .btn {
+    width: 286px;
+    display: inline-block;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 1.5rem;
+    border: 2px solid white;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	}
+  .modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    padding: 30px;
+    display: flex;
+    border-radius: 30px !important;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #0c71c3;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+	}
+  .modal-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-bottom: 0px;
+    padding: 1rem 1rem;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+	}
+  .modal-title {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: white;
+  }
+  .modal-footer {
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    border-top: 0px;
+    padding: .75rem;
+    border-bottom-right-radius: calc(.3rem - 1px);
+    border-bottom-left-radius: calc(.3rem - 1px);
+	}
+  .vertical-alignment-helper {
+      display:table;
+      height: 100%;
+      width: 40%;
+      margin: 0 auto;
+  }
+  .vertical-align-center {
+      /* To center vertically */
+      display: table-cell;
+      vertical-align: middle;
+  }
+  .modal-content {
+      /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+      width:inherit;
+      height:inherit;
+      /* To center horizontally */
+      margin: 0 auto;
+  }
+  #qrcode img {
+    margin: 0 auto;
+    padding: 15px;
+    background-color: white;
+	}
+</style>
+
+<script>
+  $(document).ready(function(){
+    
+    console.log(`🚀 ~ file: cast-terhubung.html ~ line 126 ~ document.ready::function()`);
+    $('#myModal').modal('show');
+
+    function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    
+    function eraseCookie(name) {   
+        document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+    
+    $(window).on('load',function(){
+        console.log(`🚀 ~ file: cast-terhubung.html ~ line 152 ~ on load`);
+
+      	$('#myModal').modal('show');
+    });
+    
+    $(document).on('show.bs.modal', '.modal', function () {
+      $(this).appendTo('body');
+    });
+    
+    var db_schema = '/geniora/push-command';
+
+    var firebaseOptions = {
+        apiKey: "AIzaSyBXtkfNYjNl6xqxbTdUduD1HiTGvR2mZTg",
+        authDomain: "geniora-1580969173409.firebaseapp.com",
+        databaseURL: "https://geniora-1580969173409.firebaseio.com/",
+        projectId: "geniora-1580969173409",
+        storageBucket: "geniora-1580969173409.appspot.com",
+        messagingSenderId: "454510698909",
+        appId: "1:454510698909:web:6001f6671b333be45a8f74",
+        measurementId: "G-V5EP83NHYX"
+    };
+    firebase.initializeApp(firebaseOptions);
+    var database = firebase.database();
+
+    function getFirebaseRef() {
+        return database.ref(db_schema);
+    }
+    
+    var room_id = getCookie("room_id");
+    if(!room_id) {
+    	room_id = getFirebaseRef().push().key;
+      
+      setCookie("room_id", room_id, 1);
+    } else {
+      getFirebaseRef().child(room_id);
+    }
+
+    console.log(`🚀 ~ file: cast-terhubung.html ~ line 192 ~ $ ~ room_id`, room_id);
+    
+    $(window).on('unload',function(){
+    		getFirebaseRef().child(room_id).remove();
+    });
+    
+    getFirebaseRef().child(room_id).set({
+        paired: 0,
+        createddate: firebase.database.ServerValue.TIMESTAMP,
+        command : ""
+    });
+
+    var qrcode = new QRCode("qrcode", {
+        text: room_id,
+        width: 256,
+        height: 256,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+
+    var video = document.getElementsByTagName('video')[0];
+    video.muted = true;
+
+    var command = getFirebaseRef().child(room_id + '/command')
+    command.on("value", function(data) {
+        console.log('on value()');
+      	
+      	if(data.val().play == 1) {
+          $('#myModal').modal('hide');
+
+          video.setAttribute('src', data.val().url);
+          video.currentTime = data.val().position / 1000; 
+
+          video.load();
+          video.play();
+        } else {
+          video.pause();
+          
+          var currentTime = video.currentTime * 1000;
+          
+          command.update({position: currentTime});
+      
+      		$('#myModal').modal('show');
+        }
+    });
+});
+</script>
+
+<div class="container">
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+        
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h5 class="modal-title"><b>Scan QR code</b> dengan aplikasi SayaB!sa</br> dan swipe up pada video di aplikasi saat sudah terhubung</h5>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div id="box_qrcode">
+                            <div id="qrcode" style:"margin: 0 auto"></div>
+                        </div>  
+                    </div>
+                    
+                    <!-- Modal footer -->
+              			<div class="modal-footer">
+              				<h5 class="modal-title">
+                          <b>
+                            Jangan lupa nyalakan audionya ya, selamat menonton!
+                          </b>
+                      	</h5>
+              			</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+

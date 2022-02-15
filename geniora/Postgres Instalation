@@ -78,3 +78,5 @@ Done!!
 
 export PATH=/usr/pgsql-11/bin:$PATH
 export PSQL_PATH=/usr/pgsql-11/bin/
+
+yum install postgisy
