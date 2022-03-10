@@ -20,3 +20,5 @@ scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348
 root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
 
 scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  /Users/pollymarkurin/project/app-version/SayaBisa/sayabisa.war root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
+ssh -p 185 root@58.65.241.123
