@@ -1,0 +1,30 @@
+scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 
+/Users/pollymarkurin/project/app-version/Geniora-Panel/2021-11-08/geniora-panel.war 
+root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
+1.  copy recomended file to server
+scp -r -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 
+/Users/pollymarkurin/Downloads/web_geniora_com
+root@58.65.241.124:/usr/share/ssl/web.geniora.com/2022
+
+file :
+- AAACertificateServices.crt                    (dari zip file)
+- SectigoRSADomainValidationSecureServerCA.crt  (dari zip file)
+- USERTrustRSAAAACA.crt                         (dari zip file)
+- web_geniora_com.crt                           (dari zip file)
+- private.key                                   (request ke pak Chandra)
+
+2. Create .pem files
+    cat web_geniora_com.crt SectigoRSADomainValidationSecureServerCA.crt USERTrustRSAAAACA.crt private.key > web.geniora.com.pem
+    cat web_geniora_com.crt private.key > ssl-certs.pem
+
+    Final:
+    1. for haproxy  : /usr/share/ssl/web.geniora.com/2022/web.geniora.com.pem
+    2. for nginx    : /usr/share/ssl/web.geniora.com/2022/ssl-certs.pem
+
+4. Restart HAPROXY and NGINX
+    > - ps -ef | grep haproxy
+      - kill -9 [PID HAPROXY]
+      - haproxy -f /etc/haproxy/haproxy.cfg
+    > - systemctl restart nginx
+      - systemctl status nginx

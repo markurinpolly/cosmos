@@ -13,6 +13,8 @@ scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348
 /Users/pollymarkurin/project/app-version/Geniora-Panel/2021-11-08/geniora-panel.war 
 root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
 
+scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 /Users/pollymarkurin/project/app-version/Geniora-Panel/2021-11-08/geniora-panel.war root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+
 #3 Saya Bisa
 
 scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  
@@ -23,5 +25,16 @@ scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  /Users/pollymarkurin/
 
 ssh -p 185 root@58.65.241.123
 
+ssh root@58.65.241.123
+
 #Saya Bisa Server Bitbucket App 
 zYBQQMakeT7UBC8nsPJ9
+
+001297.a61776d28f76473285409536ecad46c6.0314
+001297.a61776d28f76473285409536ecad46c6.0314
+001297.a61776d28f76473285409536ecad46c6.0314
+001297.a61776d28f76473285409536ecad46c6.0314
+001297.a61776d28f76473285409536ecad46c6.0314
+001297.a61776d28f76473285409536ecad46c6.0314
+
+001613.5d03b8f9e0f2416382c2ba3af18f0461.0340
