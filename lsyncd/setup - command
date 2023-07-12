@@ -33,6 +33,14 @@ File Count in Folder
 find /usr/share/web-attachment/ -type f | wc -l
 ls /usr/share/web-attachment/ | wc -l
 
+File Size in Folder
+du -sh /usr/share/web-attachment/*
+OR 
+cd /usr/share/web-attachment/
+du -sh
+
+
+
 
 tail -f  /var/log/lsyncd/lsyncd.log
 tail -f /var/log/lsyncd/lsyncd-status.log
