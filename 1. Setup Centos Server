@@ -1,0 +1,128 @@
+1. Install nvm
+
+
+shortcut:
+
+nvm use 16.19.1
+
+nvm alias default 16.19.1
+
+2. Install PostgresSQL
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-centos-7
+
+After Instalation
+    1.  [Change Password]
+        sudo -i -u postgres
+        psql
+        \password
+        sudo systemctl restart postgresql-11
+
+    2.  [Open Port]
+        firewall-cmd --add-service=postgresql --permanent
+        firewall-cmd --permanent --add-port=5432/tcp
+        firewall-cmd --reload
+
+    3.  [MODIFY FILE] :: vi /var/lib/pgsql/11/data/postgresql.conf
+        listen_addresses = '*' => Uncomment this
+            
+    4.  (Optional) [ADD ACCESS / Whitelist] :: vi /var/lib/pgsql/11/data/pg_hba.conf
+        example :
+        #host    all             all             [IP]/32                md5 => Format
+        host    all             all             118.136.198.241/32     md5
+        host    all             all             0.0.0.0/0              md5             #For All IP
+
+    5.  sudo systemctl restart postgresql-11
+
+3. TODO: Install lsyncd [Server Directory Synchronization]
+
+4. Install NodeJS and NPM
+    1.  curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+
+    2.  sudo yum install nodejs
+
+    3.  node -v
+
+    4.  npm -v
+
+    5. yum install gcc-c++ make -y
+
+5.  Install pm2
+    1.  npm install pm2@^3 -g
+
+    2. pm2 startup systemd
+
+6.  Install Git
+    1.  sudo yum install git
+
+    2.  git --version
+
+    3.  git config --global user.name "Polly Markurin"
+
+    4.  git config --global user.email "markurin.polly@gmail.com"
+
+7. Install NGINX
+    1.  yum install epel-release -y 
+
+    2.  yum install nginx
+
+    3.  systemctl start nginx
+
+    4.  systemctl status nginx
+
+    5. systemctl enable nginx
+
+    6.  firewall-cmd --permanent --add-service=http
+
+    7.  firewall-cmd --reload
+
+    8.  sudo setsebool -P httpd_can_network_relay on
+
+    9.  sudo setsebool -P httpd_can_network_connect on
+
+    NOTE:
+        1. [Configuration] vi /etc/nginx/nginx.conf
+
+        Revese Proxy for NodeJS Configuration example
+
+        server {
+            listen       80;
+            listen       [::]:80;
+            server_name  http://58.65.241.123;
+            root         /usr/share/nginx/html;
+
+            # Load configuration files for the default server block.
+            include /etc/nginx/default.d/*.conf;
+
+            location / {
+
+                proxy_pass http://58.65.241.123:8281;
+
+                proxy_http_version 1.1;
+
+                proxy_set_header Upgrade $http_upgrade;
+
+                proxy_set_header Connection 'upgrade';
+
+                proxy_set_header Host $host;
+
+                proxy_cache_bypass $http_upgrade;
+
+            }
+
+        error_page 404 /404.html;
+        location = /404.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+        }
+    }
+
+8.  Open and Close firewall port
+
+    firewall-cmd --zone=public --permanent --add-port=8281/tcp
+    firewall-cmd --reload
+
+    firewall-cmd --zone=public --permanent --remove-port=8281/tcp
+    firewall-cmd --reload

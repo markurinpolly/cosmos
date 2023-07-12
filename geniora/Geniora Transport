@@ -1,21 +1,35 @@
 #1 Geniora Dashboard
 
+v16.19.1
+
 cd /usr/share/web/geniora-dashboard-v4/
 git pull
+npm install --legacy-peer-deps
 npm run build
 sudo cp -r /usr/share/web/geniora-dashboard-v4/build/. /usr/share/web/geniora
 
+#2 Geniora Dashboard Partner
+
+v16.19.1
+
+cd /usr/share/web/geniora-dashboard-partner/
+git pull
+npm install --legacy-peer-deps
+npm run build
+
+sudo cp -r /usr/share/web/geniora-dashboard-partner/build/. /usr/share/web/geniora-partner
+
 /usr/share/web/geniora-dashboard-v4/public/
 
-#2 Geniora Panel
+#3 Geniora Panel
 
 scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  
 /Users/pollymarkurin/project/app-version/Geniora-Panel/2021-11-08/geniora-panel.war 
 root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
 
-scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 /Users/pollymarkurin/project/app-version/Geniora-Panel/2021-11-08/geniora-panel.war root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
+scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 /Users/pollymarkurin/project/app-version/Geniora-Panel/geniora-panel.war root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
 
-#3 Saya Bisa
+#4 Saya Bisa
 
 scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  
 /Users/pollymarkurin/project/app-version/SayaBisa/sayabisa.war 
@@ -23,18 +37,74 @@ root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
 
 scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  /Users/pollymarkurin/project/app-version/SayaBisa/sayabisa.war root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
 
+scp /Users/pollymarkurin/project/app-version/SayaBisa/sayabisa.war root@58.65.241.123:/usr/share/tomcat8.5/webapps/
+
 ssh -p 185 root@58.65.241.123
 
 ssh root@58.65.241.123
 
+#5 Geniora Api
+cd /usr/share/node/genioraku-api/
+git pull
+pm2 reload 0 && pm2 logs
+
+#6 Geniora Form
+
+cd /usr/share/web/geniora-form/
+git pull
+npm install
+npm run build
+sudo cp -r /usr/share/web/geniora-form/build/. /usr/share/web/questionnaire
+
+/usr/share/web/geniora-form/public/
+
 #Saya Bisa Server Bitbucket App 
 zYBQQMakeT7UBC8nsPJ9
 
-001297.a61776d28f76473285409536ecad46c6.0314
-001297.a61776d28f76473285409536ecad46c6.0314
-001297.a61776d28f76473285409536ecad46c6.0314
-001297.a61776d28f76473285409536ecad46c6.0314
-001297.a61776d28f76473285409536ecad46c6.0314
-001297.a61776d28f76473285409536ecad46c6.0314
+pm2 reload 0 && pm2 logs
 
-001613.5d03b8f9e0f2416382c2ba3af18f0461.0340
+scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348  /Users/pollymarkurin/project/app-version/lib/libstdc++.so.6.0.26 root@58.65.241.124:/usr/lib64/
+
+export PATH=/usr/local/lib64/gcc-4.9.2/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib64/gcc-4.9.2/lib:/usr/local/mpfr-4.0.2/lib:/usr/local/gmp-6.1.2/lib:/usr/local/mpc-1.1.0/lib:/usr/local/isl-0.21/lib:$LD_LIBRARY_PATH
+
+patchelf --set-interpreter /usr/local/lib64/glibc-2.18/lib/ld-linux-x86-64.so.2 --set-rpath /usr/local/lib64/glibc-2.18/lib:/usr/lib64 pydio-agent
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/glibc-2.18/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/glibc-2.18/lib
+export LD_LIBRARY_PATH=/opt/glibc-2.18/lib:$LD_LIBRARY_PATH
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/glibc-2.18/lib
+export LD_LIBRARY_PATH=/usr/local/lib64/glibc-2.18/lib:$LD_LIBRARY_PATH
+
+yum info glibc
+
+cd /opt/
+wget http://ftp.gnu.org/gnu/glibc/glibc-2.18.tar.gz
+tar zxvf glibc-2.18.tar.gz
+cd glibc-2.18
+mkdir build
+cd build
+../configure --prefix=/opt/glibc-2.18
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/glibc-2.18/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/glibc-2.18/lib
+
+echo $LD_LIBRARY_PATH
+
+export LD_LIBRARY_PATH=/opt/glibc-2.18/lib:$LD_LIBRARY_PATH
+
+reset
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64
+
+acl url_genioraku_api   path_beg        -i /genioraku-api/
+
+acl is_websocket path_beg /socket.io
+acl is_websocket hdr(Upgrade) -i WebSocket
+acl is_websocket hdr_beg(Host) -i ws
+
+use_backend genioraku_api if is_websocket
+
+nvm
+
+nvm ls
+nvm use 16.19.1

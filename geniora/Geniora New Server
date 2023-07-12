@@ -3,7 +3,7 @@ vps1
 ssh root@58.65.241.122
 58.65.241.122
 Model Name : Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
-HD : 500GB
+SSD : 500GB
 CPU : 4 (1 x 4 x 1)
 RAM : 16GB
 user : root
@@ -16,7 +16,7 @@ GenHA-123 (Centos 7.6.1810)
 vps2
 58.65.241.123
 Model Name : Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
-HD : 500GB
+SSD : 500GB
 CPU : 2 (1 x 2 X 1)
 RAM : 16GB
 user : root
@@ -30,7 +30,7 @@ vps3
 58.65.241.124
 ssh root@58.65.241.124  
 Model Name : Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
-HD : 500GB
+SSD : 500GB
 CPU : 1 (1 x 1 x 1)
 RAM : 16GB
 user : root
@@ -181,7 +181,7 @@ psql
 
 yum install -y gcc-c++ make
 
-curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
+curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
 
 sudo yum install nodejs
 

@@ -1,0 +1,30 @@
+body {
+    background: #eee;
+}
+
+#side_nav {
+    background: #F5F5F5;
+    min-width: 100%;
+    max-width: 100%;
+    transition: all 0.4s;
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+}
+
+hr.h-color {
+    background: #eee;
+}
+
+#side_nav {
+    margin-left: -100%;
+    position: fixed;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+#side_nav.active {
+    margin-left: 0;
+}

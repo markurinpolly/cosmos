@@ -1,3 +1,5 @@
+Source: https://phoenixnap.com/kb/install-ssl-certificate-nginx
+
 scp -P 185 -i /Users/pollymarkurin/.ssh/id_rsa_vxYat7R348 
 /Users/pollymarkurin/project/app-version/Geniora-Panel/2021-11-08/geniora-panel.war 
 root@58.65.241.124:/usr/share/apache-tomcat-8.5.41/webapps/
@@ -20,7 +22,8 @@ file :
 
     Final:
     1. for haproxy  : /usr/share/ssl/web.geniora.com/2022/web.geniora.com.pem
-    2. for nginx    : /usr/share/ssl/web.geniora.com/2022/ssl-certs.pem
+    2. for nginx    : /usr/share/ssl/web.geniora.com/2022/ssl-certs.pem       [OLD]
+       for nginx    : /usr/share/ssl/web.geniora.com/2022/web.geniora.com.pem [NEW]
 
 4. Restart HAPROXY and NGINX
     > - ps -ef | grep haproxy

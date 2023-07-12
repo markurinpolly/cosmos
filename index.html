@@ -6,63 +6,63 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+
+        <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+        <script>
+            var socket_url = 'wss://web.geniora.com/qr-login';
+
+            // var socket_url = 'ws://localhost:8085/qr-login';
+
+            console.log(`🚀 ~ file: index.html:109 ~ socket_url`, socket_url);
+
+            var socket = io(socket_url);
+
+            var socketid = "";
+
+            socket.on("on-open-connection", (arg) => {
+                console.log(arg);
+
+                socketid = arg["socketid"];
+            });
+
+            socket.on("qr-shake-code", (arg) => {
+                console.log(`🚀 ~ file: index.html:119 ~ socket.on.qr-shake-code ~ arg`, arg);
+
+                // Do ajax "QR Login Verify" here!!
+            });
+
+            // var messages = document.getElementById('messages');
+            // var form = document.getElementById('form');
+            // var input = document.getElementById('input');
+            // var roominput = document.getElementById('room-input');
+
+            // form.addEventListener('submit', (e) => {
+            //     e.preventDefault();
+            //     if (input.value) {
+            //         socket.emit('message-send', input.value, roominput.value);
+            //         createElement(input.value + ' | sent to: ' + roominput.value)
+            //         input.value = '';
+            //     }
+            // });
+
+            // socket.on('message-receive', (msg) => {
+            //     createElement(msg)
+            // });
+
+            socket.on('socket-id', (msg) => {
+                createElement('Your room ID: ' + msg)
+            });
+
+            function createElement(msg) {
+                var item = document.createElement('li');
+                item.textContent = msg;
+                messages.appendChild(item);
+            }
+
+        </script>
+        
     </head>
     <body>
-        <h3>Harap mereview konfirmasi order</h3>
-        <table>
-            <tr>
-                <td>Order id</td>
-                <td>:</td>
-                <td>#ORDERID#</td>
-            </tr>
-            <tr>
-                <td>Order By</td>
-                <td>:</td>
-                <td>#NAME#</td>
-            </tr>
-            <tr>
-                <td>Product Name</td>
-                <td>:</td>
-                <td>#PRODUCT_NAME#</td>
-            </tr>
-            <tr>
-                <td>Product Price</td>
-                <td>:</td>
-                <td>#PRODUCT_PRICE#</td>
-            </tr>
-            <tr>
-                <td>Discount</td>
-                <td>:</td>
-                <td>#PRODUCT_DISCOUNT#</td>
-            </tr>
-        </table>
-        <h3>Detail Konfirmasi</h3>
-        <table>
-            <tr>
-                <td>Bank</td>
-                <td>:</td>
-                <td>#BANK#</td>
-            </tr>
-            <tr>
-                <td>Account No</td>
-                <td>:</td>
-                <td>#ACCOUNT_NO#</td>
-            </tr>
-            <tr>
-                <td>Account Name</td>
-                <td>:</td>
-                <td>#ACCOUNT_NAME#</td>
-            </tr>
-            <tr>
-                <td>Payment Date</td>
-                <td>:</td>
-                <td>#PAYMENT_DATE#</td>
-            </tr>
-            <tr>
-                <td>Payment Note</td>
-                <td>:</td>
-                <td>#PAYMENT_NOTE#</td>
-            </tr>
-        </table>
+        Hello World!!
     </body>
 </html>

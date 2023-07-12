@@ -1,0 +1,17 @@
+Check "Docker Compose" Version
+docker-compose --version
+
+Documentation: 
+https://docs.docker.com/engine/reference/commandline/compose_up/
+
+Detached mode: Run containers in the background
+docker-compose up -d
+
+Log Tails
+docker compose logs -f
+
+List running compose projects
+docker compose ls
+
+List containers
+docker compose ps

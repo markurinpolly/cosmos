@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding-top: 60px;
+    overflow: hidden;
+}
+
+#side_nav {
+    background: #000;
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.4s;
+}
+
+@media (max-width: 767px) {
+    #side_nav {
+        margin-left: 0px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+
+    #side_nav.active {
+        margin-left: 0;
+    }
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.navbar-left {
+    float: left;
+    margin-left: 15px;
+  }
+
+/*Remove the scrollbar from Chrome, Safari, Edge and IE*/
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+* {
+-ms-overflow-style: none !important;
+}
+
+

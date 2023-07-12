@@ -1,0 +1,64 @@
+Installation: 
+https://www.liquidweb.com/kb/how-to-sync-two-centos-8-servers-using-file-replication/
+
+vi /root/.ssh/config
+
+## Configuration
+1. Configuration File  : vi /etc/ssh/sshd_config
+2. Restart Service     : service sshd restart
+
+ssh-keygen -t rsa
+ssh-copy-id -p 185 -i /root/.ssh/id_rsa_vxYat7R348 root@58.65.241.123
+p@ssGeniora:D2kali
+
+ssh -p 185 -i /root/.ssh/id_rsa_vxYat7R348 root@58.65.241.123
+
+Host dest_host
+ Hostname 58.65.241.124
+ User root
+ IdentityFile /root/.ssh/id_rsa_vxYat7R348
+
+/usr/share/web-attachment/sponsor/
+
+vi /etc/lsyncd.conf
+rm -f /etc/lsyncd.conf
+
+systemctl enable lsyncd
+systemctl status lsyncd.service
+systemctl start lsyncd.service
+systemctl restart lsyncd.service
+systemctl stop lsyncd.service
+
+File Count in Folder
+find /usr/share/web-attachment/ -type f | wc -l
+ls /usr/share/web-attachment/ | wc -l
+
+
+tail -f  /var/log/lsyncd/lsyncd.log
+tail -f /var/log/lsyncd/lsyncd-status.log
+
+ssh -p 185 -i /root/.ssh/id_rsa_vxYat7R348 root@58.65.241.124
+
+settings {
+    logfile = "/var/log/lsyncd/lsyncd.log",
+    statusFile = "/var/log/lsyncd/lsyncd-status.log",
+    statusInterval = 1
+}
+    
+-- Slave server configuration
+
+sync {
+    default.rsync, 
+    source  = "/usr/share/web-attachment/sponsor/",
+    target  = "58.65.241.123:/usr/share/web-attachment/sponsor/",
+    
+    rsync = {
+        compress = true,
+        acls = true,
+        verbose = true,
+        owner = true,
+        group = true,
+        perms = true,
+        rsh = "/usr/bin/ssh -p 185 -l root -i /root/.ssh/id_rsa_vxYat7R348"
+    }
+}

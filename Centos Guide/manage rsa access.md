@@ -49,6 +49,10 @@ ssh-keygen
 ssh-copy-id -p 185 -i .ssh/id_rsa_vxYat7R348 root@58.65.241.122
 ssh-copy-id -p 185 -i .ssh/id_rsa_vxYat7R348 root@58.65.241.123
 ssh-copy-id -p 185 -i .ssh/id_rsa_vxYat7R348 root@58.65.241.124
+
+ssh-copy-id -p 185 -i /root/.ssh/id_rsa_vxYat7R348 root@58.65.241.124
+ssh -p 185 -i /root/.ssh/id_rsa_vxYat7R348 root@58.65.241.124
+
 ```
 
 ### 2. for normal user (request rsa public key then upload to server using root user)

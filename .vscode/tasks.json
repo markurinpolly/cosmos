@@ -13,7 +13,7 @@
         {
             "label": "dev ssh abba_server",
             "type": "shell",
-            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_polly_vxYat7R348.txt polly@147.139.132.199",
+            "command": "ssh -p 185 -i /Users/pollymarkurin/.ssh/id_rsa_polly_vxYat7R348.txt polly@147.139.195.199",
             "problemMatcher": [],
             "group": {
                 "kind": "build",

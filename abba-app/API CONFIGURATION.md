@@ -55,7 +55,11 @@ dev.abbalovebarat.org
 admindev.abbalovebarat.org
 147.139.132.199
 
+
+
 ## **GITHUB**
+PRE:: sudo su
+
 1. eval "$(ssh-agent -s)" && ssh-add /home/polly/.ssh/id_rsa
 
 2. sudo su
@@ -166,7 +170,6 @@ node newest v14.4.0
 v12.17.0
 
 nvm install v12.17.0 --reinstall-packages-from=v12.17.0
-
 Jadi setiap org yg install apps akan terima notifikasi :
 1. Devotion tiap pagi pk.06.00
 2. Church Online ada konten baru tiap sabtu sore/mlm
@@ -181,3 +184,7 @@ propinsi.json
 kabupaten/[id propinsi].json
 kecamatan/[id kabupaten].json
 kelurahan/[id kecamatan].json
+
+bind *:443 ssl crt /etc/ssl/certs/star_abbalovebarat_org.pem
+
+bind *:443 ssl crt /etc/ssl/certs/2023/star_abbalovebarat_org.pem

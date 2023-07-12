@@ -1,0 +1,22 @@
+config:
+  target: "http://58.65.241.123/geniora-partner"
+  phases:
+    - duration: 10
+      arrivalRate: 5
+      name: Warm up
+    - duration: 10
+      arrivalRate: 5
+      rampTo: 20
+      name: Ramp up load
+    - duration: 20
+      arrivalRate: 10
+      name: Sustained load
+
+scenarios:
+  - name: "Browse Product"
+    flow:
+      - get:
+          url: "/v1/membership/products"
+          headers:
+            Authorization: Basic P230508133--136d3780-edbd-11ed-9e07-713163d6bb74
+      - think: 0

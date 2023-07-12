@@ -1,0 +1,30 @@
+config:
+  plugins:
+    uuid:
+      vars: [ 'uuid' ]
+  target: "http://58.65.241.123/geniora-partner"
+  http:
+    timeout: 10
+  phases:
+    - duration: 1
+      arrivalRate: 1
+      name: Warm up
+    - duration: 10
+      arrivalRate: 5
+      name: Med load I
+
+scenarios:
+  - name: "Activation Request"
+    flow:
+      - post:
+          url: "/v1/membership/activation-request"
+          headers:
+            Content-Type: "application/json"
+            Authorization: Basic P230508133--136d3780-edbd-11ed-9e07-713163d6bb74
+          json: 
+            reference_no: "{{ uuid }}"
+            products: [
+              { product_id: "com.membership.gen_07", qty: 1 }
+            ]
+          beforeRequest: addUUID
+      - think: 0
